@@ -15,12 +15,6 @@ const MainContainer = () => {
         <Switch>
           <RecipeContainer/>
         </Switch>
-        <Switch>
-          <ListContainer/>
-        </Switch>
-        <Switch>
-          <SearchContainer/>
-        </Switch>
       </Fragment>
     </Router>
   )

@@ -26,3 +26,5 @@ Half Baked Application Development Log
 11 - Now able to render placeholder containers to LocalHost:3000
 12 - Begin work on generating a random recipe from the API to RecipeContainer
 13 -  Created ListOfRecipies components
+14 - Had issue loading image because it tried to render before the fetch request completed. Added conditional logic to delay the render. Image now renders.
+15 - Created RecipeInstructions component and now renders within RecipeContainer

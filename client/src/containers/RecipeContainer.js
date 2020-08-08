@@ -5,6 +5,8 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import ListOfRecipes from '../components/recipe/ListOfRecipes.js';
 import RecipeInstructions from '../components/recipe/RecipeInstructions.js';
+import IngredientList from '../components/recipe/IngredientList.js';
+
 
 import backEndURL from "../helpers/BackEndURL.js";
 import recipeSearchByIngredientsURL from "../helpers/APIURL.js";
@@ -41,6 +43,7 @@ class RecipeContainer extends Component{
         <ListOfRecipes/>
         <img src={this.state.selectedRecipe.image}/>
         <RecipeInstructions selectedRecipe={this.state.selectedRecipe}/>
+        <IngredientList ingredients={this.state.selectedRecipe.extendedIngredients} />
       </Fragment>
     )
   }

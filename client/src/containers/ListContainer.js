@@ -15,6 +15,7 @@ class ListContainer extends Component{
     this.state={
       users: []
     }
+    this.findUserById = this.findUserById.bind(this);
   }
 
   // LOGIC STARTS HERE
@@ -28,9 +29,9 @@ class ListContainer extends Component{
       })
     });
 
-    findPirateById(id) {
-    return this.state.pirates.find(pirate => {
-      return pirate.id === parseInt(id);
+    findUserById(id) {
+    return this.state.users.find(user => {
+      return user.id === parseInt(id);
     })
   }
 

@@ -6,17 +6,20 @@ const NavBar = (props) => {
     <h2> THIS IS THE NAV BAR </h2>
     <img scr="/images/KnifeAndFork.png" alt="logo"/>
     <ul>
+    <li className="navLink">
+      <a href="/">Home</a>
+    </li>
       <li className="navLink">
-        <a href="api/users">Users</a>
+        <a href="/users">Users</a>
       </li>
       <li className="navLink">
-        <a href="api/users/new">Create User</a>
+        <a href="/users/new">Create User</a>
       </li>
       <li className="navLink">
-        <a href="api/recipes">Recipes</a>
+        <a href="/recipes">Recipes</a>
       </li>
       <li className="navLink">
-        <a href="api/recipes/new">Create Recipe</a>
+        <a href="/recipes/new">Create Recipe</a>
       </li>
     </ul>
     </header>

@@ -15,10 +15,7 @@ class UserForm extends Component {
       }
     }
     this.handleChange = this.handleChange.bind(this);
-    this.handleAllergies = this.handleAllergies.bind(this);
     this.handleDietaryNeeds = this.handleDietaryNeeds.bind(this);
-    this.handleShoppingList = this.handleShoppingList.bind(this);
-    this.handleBlacklist = this.handleBlacklist.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   };
   handleChange(event){
@@ -39,7 +36,6 @@ class UserForm extends Component {
   handleSubmit(event){
     event.preventDefault();
     this.props.onCreate(this.state.user);
-
   }
 
   render(){

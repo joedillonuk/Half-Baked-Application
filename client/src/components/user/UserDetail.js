@@ -3,7 +3,7 @@ import User from "./User"
 
 const UserDetail = ({user, onDelete}) => {
 
-    const handleDelete = () => {
+    const handleUserDelete = () => {
       onDelete(user.id)
     }
 
@@ -46,7 +46,7 @@ const UserDetail = ({user, onDelete}) => {
         <ul>
         <p>a list of recipes the user does not like that will be omitted from the filet will go here </p>
         </ul>
-        <button onClick={handleDelete}>Delete {user.firstName}</button>
+        <button onClick={handleUserDelete}>Delete {user.firstName}</button>
       </div>
     )
 };

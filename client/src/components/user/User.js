@@ -15,7 +15,7 @@ const User = ({user}) => {
     {user.firstName} {user.lastName}
     </Link>
     <Link>
-    {user.allergies.name}
+    {user.allergies}
     </Link>
     </Fragment>
   )

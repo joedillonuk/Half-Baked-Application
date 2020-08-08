@@ -8,12 +8,13 @@ import SearchContainer from './SearchContainer.js';
 
 const MainContainer = () => {
 
+//Add in the RecipeContainer to the switch again
   return(
     <Router>
       <Fragment>
         <NavBar/>
         <Switch>
-          <RecipeContainer/>
+          <SearchContainer/>
         </Switch>
       </Fragment>
     </Router>

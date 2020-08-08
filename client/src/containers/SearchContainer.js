@@ -5,6 +5,8 @@
 import React, {Component, Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
+import SearchFilters from '../components/search/SearchFilters.js';
+
 import backEndURL from "../helpers/BackEndURL.js";
 import recipeSearchByIngredientsURL from "../helpers/APIURL.js";
 
@@ -22,7 +24,12 @@ class SearchContainer extends Component{
   //RENDER STARTS HERE
   render(){
     return(
-      <p> This is the Search Container </p>
+      <div>
+        <p> This is the Search Container </p>
+        <SearchFilters/>
+        <button>Clear Filters</button>
+        <button>Submit(placeholder)</button>
+      </div>
     )
   }
 }

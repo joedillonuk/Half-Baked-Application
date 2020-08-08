@@ -14,7 +14,9 @@ const User = ({user}) => {
     <Link to={url}>
     {user.firstName} {user.lastName}
     </Link>
-    <p>allergies: {user.allergies.name}</p>
+    <Link>
+    {user.allergies.name}
+    </Link>
     </Fragment>
   )
 }

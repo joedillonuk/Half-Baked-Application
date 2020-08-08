@@ -15,7 +15,7 @@ const MainContainer = () => {
         <NavBar/>
         <Switch>
 
-<ListContainer/>
+          <ListContainer/>
           <SearchContainer/>
           <RecipeContainer/>
 

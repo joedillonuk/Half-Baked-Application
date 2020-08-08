@@ -21,3 +21,11 @@ Half Baked Application Development Log
 6 - Create DataLoader for testing purposes
 7 - Tested via localhost:8080, initially user not displaying it's recipe. Thankfully not an issue.
 8 - Back end parked, moved to front end.
+9 - Creating MainContainer, RecipeContainer, ListContainer and SearchContainer  and components folders (list, recipe and search).
+10 - To avoid DRY and additionally gitIgnore the API key we created helper files for the API URL and BackEndURL
+11 - Now able to render placeholder containers to LocalHost:3000
+12 - Begin work on generating a random recipe from the API to RecipeContainer
+13 -  Created ListOfRecipies components
+** 14 - Had issue loading image because it tried to render before the fetch request completed. Added conditional logic to delay the render. Image now renders.
+15 - Created RecipeInstructions component and now renders within RecipeContainer
+16 - Joe to make Ingredients component, Donald to make ListContainer and Save Button on Recipe to tie in with DB, Luke to make User container/form

@@ -22,7 +22,16 @@ class ListContainer extends Component{
   //RENDER STARTS HERE
   render(){
     return(
-      <p> This is the List Container </p>
+      <Router>
+      <Fragment>
+      <Switch>
+      <p>Allergies List</p>
+      <p>Dietary Needs List</p>
+      <p>Shopping List</p>
+      <p>Blacklist</p>
+      </Switch>
+      </Fragment>
+      </Router>
     )
   }
 }

@@ -14,6 +14,7 @@ const MainContainer = () => {
         <NavBar/>
         <Switch>
           <RecipeContainer/>
+          <ListContainer/>
         </Switch>
       </Fragment>
     </Router>

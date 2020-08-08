@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import backEndURL from "../helpers/BackEndURL.js";
 import recipeSearchByIngredientsURL from "../helpers/APIURL.js";
+import Request from '../helpers/request';
 
 class ListContainer extends Component{
   constructor(props){
@@ -21,13 +22,14 @@ class ListContainer extends Component{
   // LOGIC STARTS HERE
   componentDidMount(){
     const request = new Request();
-
-    request.get('api/users')
+    const url = "http://localhost:8080/api/users"
+    request.get(url)
     .then(data => {
-      this.setLastName({
-        users: data
+      this.setState({users: data});
       })
-    });
+    }
+
+
 
     findUserById(id) {
     return this.state.users.find(user => {
@@ -53,7 +55,7 @@ class ListContainer extends Component{
   }
 
 
-  }
+
   //RENDER STARTS HERE
   render(){
     return(
@@ -70,5 +72,6 @@ class ListContainer extends Component{
     )
   }
 }
+
 
 export default ListContainer;

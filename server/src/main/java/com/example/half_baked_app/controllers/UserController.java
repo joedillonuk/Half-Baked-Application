@@ -14,7 +14,7 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(value = "/users")
     public ResponseEntity<List<User>> getAllUsers() {
         return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);

@@ -14,7 +14,12 @@ const MainContainer = () => {
       <Fragment>
         <NavBar/>
         <Switch>
+<<<<<<< HEAD
           <SearchContainer/>
+=======
+          <RecipeContainer/>
+          <ListContainer/>
+>>>>>>> feature/ListContainer
         </Switch>
       </Fragment>
     </Router>

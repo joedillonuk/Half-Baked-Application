@@ -13,16 +13,60 @@ class ListContainer extends Component{
     super(props);
 
     this.state={
-
+      users: []
     }
+    this.findUserById = this.findUserById.bind(this);
   }
 
   // LOGIC STARTS HERE
+  componentDidMount(){
+    const request = new Request();
 
+    request.get('api/users')
+    .then(data => {
+      this.setLastName({
+        users: data
+      })
+    });
+
+    findUserById(id) {
+    return this.state.users.find(user => {
+      return user.id === parseInt(id);
+    })
+  }
+
+  handleDelete(id){
+    const request = new Request();
+    const url = '/api/users/' +id;
+    request.delete(url)
+    .then(() => {
+      window.location = '/users'
+    })
+  }
+
+  handlePost(user){
+    const request = new Request();
+    request.post('/api/users', user)
+      .then(()=>{
+        window.location = '/users';
+      })
+  }
+
+
+  }
   //RENDER STARTS HERE
   render(){
     return(
-      <p> This is the List Container </p>
+      <Router>
+      <Fragment>
+      <Switch>
+      <p>Allergies List</p>
+      <p>Dietary Needs List</p>
+      <p>Shopping List</p>
+      <p>Blacklist</p>
+      </Switch>
+      </Fragment>
+      </Router>
     )
   }
 }

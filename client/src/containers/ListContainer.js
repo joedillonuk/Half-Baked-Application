@@ -14,7 +14,6 @@ class SimpleListContainer extends Component{
       isLoading: false,
       users: []
     }
-    this.findUserById = this.findUserById.bind(this);
   }
 
   // LOGIC STARTS HERE

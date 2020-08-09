@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import NavBar from '../NavBar.js';
 
 import RecipeContainer from './RecipeContainer.js';
-import SimpleListContainer from './SimpleListContainer.js';
+import ListContainer from './ListContainer.js';
 import SearchContainer from './SearchContainer.js';
 
 const MainContainer = () => {
@@ -12,7 +12,7 @@ return(
     <Fragment>
       <NavBar/>
       <RecipeContainer recipeID="716429"/>
-      <SimpleListContainer/>
+      <ListContainer/>
       <SearchContainer/>
     </Fragment>
       )

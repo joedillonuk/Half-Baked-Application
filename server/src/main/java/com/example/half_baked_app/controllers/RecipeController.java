@@ -14,7 +14,7 @@ public class RecipeController {
     @Autowired
     RecipeRepository recipeRepository;
 
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(value = "/recipes")
     public ResponseEntity<List<Recipe>> getAllRecipes() {
         return new ResponseEntity<>(recipeRepository.findAll(), HttpStatus.OK);

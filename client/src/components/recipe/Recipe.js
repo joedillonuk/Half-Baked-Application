@@ -1,22 +1,22 @@
 import React, {Fragment} from 'react';
 import {Link} from "react-router-dom";
 
-const User = ({user}) => {
+const Recipe = ({recipe}) => {
 
-  if (!user){
+  if (!recipe){
     return "Loading..."
   }
 
-  const url = `/users/${user.id}`;
+  const url = `/recipies/${recipe.id}`;
+
 
   return (
     <Fragment>
     <Link to={url}>
-    {user.firstName} {user.lastName}
+        {recipe.name}
     </Link>
-    <p>allergies: {user.allergies.name}</p>
     </Fragment>
   )
 }
 
-export default User;
+export default Recipe;

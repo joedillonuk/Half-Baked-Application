@@ -17,7 +17,7 @@ class SearchFilers extends React.Component {
           <input type="text" id="ingredientName" name="ingredientName"></input>
           <button>Add</button>
 
-          <h3> FIlter by Dietary Requirements </h3>
+          <h3> Filter by Dietary Requirements </h3>
 
           <label for="vegetarian">Vegetarian:</label>
           <input type="checkbox" id="vegetarian" name="vegetarian"/>

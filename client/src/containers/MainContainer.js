@@ -13,25 +13,19 @@ const MainContainer = () => {
   return(
     <Router>
       <Fragment>
-        <NavBar/>
-        <Switch>
-
-<<<<<<< HEAD
-<RecipeContainer/>
-<ListContainer/>
-
-=======
-          <SimpleListContainer/>
->>>>>>> d492fa3cebdef47ae7061d7d02c65724476aec1d
-          <SearchContainer/>
+      <NavBar/>
+      <Switch>
 
 
 
+        <SimpleListContainer/>
+        <SearchContainer/>
 
-        </Switch>
+
+      </Switch>
       </Fragment>
-    </Router>
-  )
-}
+      </Router>
+      )
+      }
 
-export default MainContainer;
+      export default MainContainer;

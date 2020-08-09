@@ -16,11 +16,12 @@ class SearchContainer extends Component{
     super(props);
 
     this.state={
-
+      setFilters:["Test1", "Test2"]
     }
   }
 
   // LOGIC STARTS HERE
+
 
   //RENDER STARTS HERE
   render(){
@@ -28,7 +29,7 @@ class SearchContainer extends Component{
       <div>
         <p> This is the Search Container </p>
         <SearchFilters/>
-        <ActiveFiltersList/>
+        <ActiveFiltersList setFilters={this.state.setFilters}/>
         <button>Clear Filters</button>
         <button>Submit(placeholder)</button>
       </div>

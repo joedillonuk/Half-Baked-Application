@@ -1,17 +1,27 @@
-import React from 'react';
+import React, {Component, Fragment} from 'react';
 
-const IngredientList = (props) => {
+class IngredientList extends Component {
+  constructor(props){
+    super(props);
 
-  if (props.length === 0) {
-	return <p>Select a recipe to view ingredients...</p>
-}
+    this.state={
+      metric: true,
+      currentUnits: "metric",
+      imgUrl: "https://spoonacular.com/cdn/ingredients_100x100/"
 
-console.log(props.ingredients[0].name);
+    }
+    this.measures = this.measures.bind(this);
+    this.handleUnitsClick = this.handleUnitsClick.bind(this);
+    this.handleItemClick = this.handleItemClick.bind(this);
+  }
 
-let metric = true;
 
-const measures = (ingredient) => {
-  if(metric == true){
+
+
+
+
+ measures(ingredient){
+  if(this.state.metric == true){
     return ingredient.measures.metric.amount.toFixed(0) + " " + ingredient.measures.metric.unitShort
   } else {
     return ingredient.measures.us.amount.toFixed(0) + " " + ingredient.measures.us.unitShort
@@ -19,48 +29,53 @@ const measures = (ingredient) => {
 }
 
 
-const handleUnitsClick = () => {
-  metric = !metric
-  console.log(metric);
+ handleUnitsClick(){
+if(!this.state.metric){
+  this.setState({metric: true})
+  this.setState({currentUnits: "metric"})
+}else{
+  this.setState({metric: false})
 
-
+this.setState({currentUnits: "us"})}
 }
 
-const handleItemClick = (event) => {
+handleItemClick(event){
   console.log(event);
 }
 
-const imgUrl = "https://spoonacular.com/cdn/ingredients_100x100/";
 
-  const ingredientList = props.ingredients.map((ingredient, index) => {
-  	return (
-      <div key={index} onClick={ () => handleItemClick(ingredient)} className="ingredient-list-item" value={ingredient}>
+
+
+
+
+render(){
+
+  const ingredientList = this.props.ingredients.map((ingredient, index) => {
+    return (
+      <div key={index} onClick={ () => this.handleItemClick(ingredient)} className="ingredient-list-item" value={ingredient}>
 
       {/* The above makes the entire Div clickable.
         Currently handleItemClick just consoleLog the item that has been clicked.
         Will add functionality to add to shopping list later.
         May add logic to show which items are already in Shopping List? */}
 
-        <img src={imgUrl + ingredient.image}/>
-  		   <p>{measures(ingredient) + " " + ingredient.name}</p>
-  			</div>
-  	)
+        <img src={this.state.imgUrl + ingredient.image}/>
+         <p>{this.measures(ingredient) + " " + ingredient.name}</p>
+        </div>
+    )
   })
-
-
-
-
 
     return(
       <div>
       <h2>Ingredients</h2>
-      <h3 onClick={ () => handleUnitsClick()}>Units: placeholder</h3>
+      <h3 onClick={ () => this.handleUnitsClick()}>Units: {this.state.currentUnits}</h3>
 
       <div className="ingredient-list-container">
       {ingredientList}
       </div>
       </div>
     )
+  }
   }
 
 

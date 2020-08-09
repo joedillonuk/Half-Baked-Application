@@ -3,19 +3,15 @@ import {Link} from "react-router-dom";
 
 const User = ({user}) => {
 
-  if (!user){
-    return "Loading..."
-  }
-
-  const url = `/users/${user.id}`;
-
   return (
-    <Fragment>
-    <Link to={url}>
-    {user.firstName} {user.lastName}
-    </Link>
-    <p>allergies: {user.allergies.name}</p>
-    </Fragment>
+    <div className="component">
+    <p>{user.firstName}</p>
+    <p>{user.lastName}</p>
+    <p>{user.intolerances}</p>
+    <p>{user.dietaryNeeds}</p>
+    <p>{user.shoppingList}</p>
+    <p>{user.blacklist}</p>
+    </div>
   )
 }
 

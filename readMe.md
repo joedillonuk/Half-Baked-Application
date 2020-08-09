@@ -29,3 +29,8 @@ Half Baked Application Development Log
 ** 14 - Had issue loading image because it tried to render before the fetch request completed. Added conditional logic to delay the render. Image now renders.
 15 - Created RecipeInstructions component and now renders within RecipeContainer
 16 - Joe to make Ingredients component, Donald to make ListContainer and Save Button on Recipe to tie in with DB, Luke to make User container/form
+
+8th August 2020
+
+1 - Merging components
+2 - Issue with fetching data from back end for user CORS. Had to implement a temporary fix in the UserController using @CrossOrigin

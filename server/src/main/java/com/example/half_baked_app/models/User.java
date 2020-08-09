@@ -28,8 +28,8 @@ public class User {
     @Column(name = "dietary_needs")
     private ArrayList<String> dietaryNeeds;
 
-    @Column(name = "allergies")
-    private ArrayList<String> allergies;
+    @Column(name = "intolerences")
+    private ArrayList<String> intolerences;
 
     @Column(name= "shopping_list")
     private ArrayList<String> shoppingList;
@@ -44,7 +44,7 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dietaryNeeds = new ArrayList<String>();
-        this.allergies = new ArrayList<String>();
+        this.intolerences = new ArrayList<String>();
         this.shoppingList = new ArrayList<String>();
         this.savedRecipes = new ArrayList<Recipe>();
     }
@@ -91,16 +91,16 @@ public class User {
         this.dietaryNeeds.remove(diet);
     }
 
-    public ArrayList<String> getAllergies() {
-        return allergies;
+    public ArrayList<String> getintolerences() {
+        return intolerences;
     }
 
-    public void addAllergies(String allergy) {
-        this.allergies.add(allergy);
+    public void addintolerences(String allergy) {
+        this.intolerences.add(allergy);
     }
 
-   public void removeAllergies(String allergy) {
-        this.allergies.remove(allergy);
+   public void removeintolerences(String allergy) {
+        this.intolerences.remove(allergy);
     }
 
     public ArrayList<String> getShoppingList() {

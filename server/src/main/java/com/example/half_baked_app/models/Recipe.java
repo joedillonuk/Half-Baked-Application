@@ -16,6 +16,7 @@ public class Recipe {
 
     private Long recipeID;
     private String name;
+    private Boolean blacklist;
 
     @JsonIgnoreProperties({"recipes"})
     @ManyToOne
@@ -24,10 +25,11 @@ public class Recipe {
 
     //CONSTRUCTORS
 
-    public Recipe(Long recipeID, String name, User user){
+    public Recipe(Long recipeID, String name, User user, Boolean blacklist){
         this.recipeID = recipeID;
         this.name = name;
         this.user = user;
+        this.blacklist = blacklist;
     }
 
     public Recipe(){}
@@ -65,5 +67,13 @@ public class Recipe {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Boolean getBlacklist() {
+        return blacklist;
+    }
+
+    public void setBlacklist(Boolean blacklist) {
+        this.blacklist = blacklist;
     }
 }

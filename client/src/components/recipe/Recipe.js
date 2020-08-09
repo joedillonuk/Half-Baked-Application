@@ -1,14 +1,21 @@
 import React, {Fragment} from 'react';
 import {Link} from "react-router-dom";
 
-const Recipe = (props) => {
+const Recipe = ({recipe}) => {
+
+  if (!recipe){
+    return "Loading..."
+  }
+
+  const url = `/recipies/${recipe.id}`;
+
 
   return (
-    <div className="component">
-        <p className="name">
-          {props.recipe.name}
-        </p>
-    </div>
+    <Fragment>
+    <Link to={url}>
+        {recipe.name}
+    </Link>
+    </Fragment>
   )
 }
 

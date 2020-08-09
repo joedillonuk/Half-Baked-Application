@@ -103,6 +103,7 @@ class ListContainer extends Component{
     return(
       <Router>
       <Fragment>
+      <Switch>
       <Route exact path="/users/new" render={()=> {
         return <UserForm dietaryNeeds={this.state.dietaryNeeds} onCreate={this.handleUserPost}/>
       }} />
@@ -115,26 +116,32 @@ class ListContainer extends Component{
       <Route render={(props) => {
         return <UserList users={this.state.users}/>
       }}/>
+      </Switch>
       </Fragment>
       <Fragment>
+      <Switch>
       <Route exact path="/recipes/new" render={()=> {
         return <RecipeForm onCreate={this.handleRecipePost}/>
       }} />
       <Route exact path="/recipes/:id" render={(props)=> {
         const id = props.match.params.id //id as a string
-        const user = this.findRecipeById(id);
+        const recipe = this.findRecipeById(id);
         console.log(recipe);
         return <UserDetail recipes={recipe} onDelete={this.handleRecipeDelete}/>
       }}/>
       <Route render={(props) => {
         return <UserList recipes={this.state.recipes}/>
       }}/>
+      </Switch>
       </Fragment>
       <Fragment>
+      <Switch>
       <p>Dietary Needs List</p>
       <p>Shopping List</p>
       <p>Blacklist</p>
+      </Switch>
       </Fragment>
+
       </Router>
     )
   }

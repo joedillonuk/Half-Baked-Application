@@ -8,7 +8,7 @@ class UserForm extends Component {
       user: {
         firstName: "",
         lastName: "",
-        allergies: null,
+        intolerances: null,
         dietaryNeeds: null,
         shoppingList: null,
         blacklist: null

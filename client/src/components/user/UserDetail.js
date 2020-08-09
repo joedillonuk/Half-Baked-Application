@@ -30,9 +30,9 @@ const UserDetail = ({user, onDelete}) => {
     return (
       <div className="component">
         <User user={user}/>
-        <h3>Allergies:</h3>
+        <h3>Intolerances:</h3>
         <ul>
-        <p>a list of Ingredients the user is allergic to will go here </p>
+        <p>a list of Ingredients the user is allergic/intolerant to will go here </p>
         </ul>
         <h3>Dietary Needs:</h3>
         <ul>

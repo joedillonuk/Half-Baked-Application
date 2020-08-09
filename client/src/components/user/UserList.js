@@ -3,35 +3,19 @@ import User from './User.js';
 
 
 const UserList = (props) => {
-
-	if (props.users.length === 0) {
-		return <p>no users yet....</p>
-	}
-
-	const userEls = props.users.map((user, index) => {
-		return (
-			<li key={index}>
-				<div className="component">
-				<User user={user}/>
-				</div>
+	const users = props.users.map((user) => {
+			return (
+				<li key={user.id} className="component-item">
+				<User user={user} />
 			</li>
 		)
-	})
+		})
 
-	const dietaryNeeds = props.users.dietaryNeeds.map((dietaryNeed, index) => {
-		return (
-			<li key={index}>
-				<div className="component">
-				<User user={dietaryNeed}/>
-				</div>
-			</li>
-		)
-	})
 
 	const allergies = props.users.allergies.map((allergy, index) => {
 		return (
 			<li key={index}>
-				<div className="component">
+				<div className="component-item">
 				<User user={allergy}/>
 				</div>
 			</li>
@@ -48,21 +32,22 @@ const UserList = (props) => {
 		)
 	})
 
-	const blacklistRecipes = props.users.blacklist.map((recipe, index) => {
+	const blacklistRecipes = props.users.savedRecipes.map((recipe, index) => {
+		if (recipe.blacklist == true){
+
 		return (
 			<li key={index}>
 				<div className="component">
 				<User user={recipe}/>
 				</div>
 			</li>
-		)
+		)}
 	})
 
 
 	return (
 		<ul className="component-list">
-			{userEls}
-			{dietaryNeeds}
+			{users}
 			{allergies}
 			{shoppingList}
 			{blacklistRecipes}

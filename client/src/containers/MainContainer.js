@@ -3,7 +3,8 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../NavBar.js';
 
 import RecipeContainer from './RecipeContainer.js';
-import ListContainer from './ListContainer.js';
+import SimpleListContainer from './SimpleListContainer.js';
+
 import SearchContainer from './SearchContainer.js';
 
 const MainContainer = () => {
@@ -15,7 +16,7 @@ const MainContainer = () => {
         <NavBar/>
         <Switch>
 
-          <ListContainer/>
+          <SimpleListContainer/>
           <SearchContainer/>
           <RecipeContainer/>
 

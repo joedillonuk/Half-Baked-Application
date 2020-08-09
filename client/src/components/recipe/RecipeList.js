@@ -8,7 +8,7 @@ const RecipeList = (props) => {
 		return <p>you haven't submitted any recipies yet...</p>
 	}
 
-	const recipes = props.recipes.map((recipe) => {
+	const recipes = props.recipes.map((recipe, index) => {
 			return (
         <li key={index}>
           <div className="component">

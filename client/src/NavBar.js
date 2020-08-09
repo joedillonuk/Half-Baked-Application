@@ -12,15 +12,7 @@ const NavBar = (props) => {
       <li className="navLink">
         <a href="/users">Users</a>
       </li>
-      <li className="navLink">
-        <a href="/users/new">Create User</a>
-      </li>
-      <li className="navLink">
-        <a href="/recipes">Recipes</a>
-      </li>
-      <li className="navLink">
-        <a href="/recipes/new">Create Recipe</a>
-      </li>
+      
     </ul>
     </header>
   )

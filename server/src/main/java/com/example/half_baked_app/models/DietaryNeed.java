@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
  @Entity
- @Table(name="dietaryNeeds")
+ @Table(name="dietary_needs")
  public class DietaryNeed {
 
         @Id
@@ -13,7 +13,7 @@ import javax.persistence.*;
 
         private String name;
 
-        @JsonIgnoreProperties({"dietaryNeeds"})
+        @JsonIgnoreProperties({"dietary_needs"})
         @ManyToOne
         @JoinColumn(name = "user_id", nullable = false)
         private User user;

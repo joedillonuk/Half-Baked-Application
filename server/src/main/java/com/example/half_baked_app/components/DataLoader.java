@@ -64,8 +64,8 @@ public class DataLoader implements ApplicationRunner {
         user1.addToSavedRecipes(recipe1);
         user1.addToSavedRecipes(recipe2);
         user1.addDietaryNeeds(dietaryNeed1);
-        user1.addIntolerences(intolerance1);
-        user1.addIntolerences(intolerance2);
+        user1.addIntolerances(intolerance1);
+        user1.addIntolerances(intolerance2);
         user1.addToShoppingList(shoppingListItem1);
         user1.addToShoppingList(shoppingListItem2);
         user1.addToShoppingList(shoppingListItem2);

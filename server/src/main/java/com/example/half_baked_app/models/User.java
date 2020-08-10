@@ -2,9 +2,8 @@
 
 package com.example.half_baked_app.models;
 
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -26,19 +25,19 @@ public class User {
     private String lastName;
 
 
-    @JsonIgnoreProperties({"users"})
+    @JsonBackReference
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<DietaryNeed> dietaryNeeds;
 
-    @JsonIgnoreProperties({"users"})
+    @JsonBackReference
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private List<Intolerance> intolerences;
+    private List<Intolerance> intolerances;
 
-    @JsonIgnoreProperties({"users"})
+    @JsonBackReference
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<ShoppingListItem> shoppingList;
 
-    @JsonIgnoreProperties({"users"})
+    @JsonBackReference
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Recipe> savedRecipes;
 
@@ -48,7 +47,7 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dietaryNeeds = new ArrayList<DietaryNeed>();
-        this.intolerences = new ArrayList<Intolerance>();
+        this.intolerances = new ArrayList<Intolerance>();
         this.shoppingList = new ArrayList<ShoppingListItem>();
         this.savedRecipes = new ArrayList<Recipe>();
     }
@@ -83,8 +82,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public List<DietaryNeed> getAllDietaryNeeds() {
+    public List<DietaryNeed> getDietaryNeeds() {
         return dietaryNeeds;
+    }
+
+    public void setDietaryNeeds(List<DietaryNeed> dietaryNeeds) {
+        this.dietaryNeeds = dietaryNeeds;
     }
 
     public void addDietaryNeeds(DietaryNeed dietaryNeed) {
@@ -95,20 +98,28 @@ public class User {
         this.dietaryNeeds.remove(dietaryNeed);
     }
 
-    public List<Intolerance> getIntolerences() {
-        return intolerences;
+    public List<Intolerance> getIntolerances() {
+        return intolerances;
     }
 
-    public void addIntolerences(Intolerance intolerance) {
-        this.intolerences.add(intolerance);
+    public void setIntolerances(List<Intolerance> intolerances) {
+        this.intolerances = intolerances;
     }
 
-   public void removeintolerences(Intolerance intolerance) {
-        this.intolerences.remove(intolerance);
+    public void addIntolerances(Intolerance intolerance) {
+        this.intolerances.add(intolerance);
+    }
+
+   public void removeIntolerances(Intolerance intolerance) {
+        this.intolerances.remove(intolerance);
     }
 
     public List<ShoppingListItem> getShoppingList() {
         return shoppingList;
+    }
+
+    public void setShoppingList(List<ShoppingListItem> shoppingList) {
+        this.shoppingList = shoppingList;
     }
 
     public void addToShoppingList(ShoppingListItem shoppingListItem) {
@@ -121,6 +132,10 @@ public class User {
 
     public List<Recipe> getSavedRecipes() {
         return savedRecipes;
+    }
+
+    public void setSavedRecipes(List<Recipe> savedRecipes) {
+        this.savedRecipes = savedRecipes;
     }
 
     public void addToSavedRecipes(Recipe recipe) {

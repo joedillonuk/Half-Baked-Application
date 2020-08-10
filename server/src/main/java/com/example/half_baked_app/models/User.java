@@ -25,11 +25,14 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
+
     @Column(name = "dietary_needs")
     private ArrayList<String> dietaryNeeds;
 
+
     @Column(name = "intolerences")
     private ArrayList<String> intolerences;
+
 
     @Column(name= "shopping_list")
     private ArrayList<String> shoppingList;

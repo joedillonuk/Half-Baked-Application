@@ -1,15 +1,10 @@
 //HANDLES SAVED RECIPES, RECIPE SEARCH RESULTS
 
 import React, {Component, Fragment} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import ListOfRecipes from '../components/recipe/ListOfRecipes.js';
 import RecipeInstructions from '../components/recipe/RecipeInstructions.js';
 import IngredientList from '../components/recipe/IngredientList.js';
-
-
-import backEndURL from "../helpers/BackEndURL.js";
-import recipeSearchByIngredientsURL from "../helpers/APIURL.js";
 
 class RecipeContainer extends Component{
   constructor(props){
@@ -25,7 +20,7 @@ class RecipeContainer extends Component{
 
   componentWillMount(){
   this.setState({isLoading: true});
-  const url = "https://api.spoonacular.com/recipes/1100000/information?apiKey=412af1d196fd4a28af649ebd01a51d74"
+  const url = `https://api.spoonacular.com/recipes/${this.props.recipeID}/information?apiKey=412af1d196fd4a28af649ebd01a51d74`
   fetch(url)
   .then(res => res.json())
   .then(recipe => this.setState({selectedRecipe: recipe, isLoading: false}))

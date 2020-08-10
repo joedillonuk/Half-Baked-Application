@@ -105,7 +105,7 @@ render(){
         Currently handleItemClick just consoleLog the item that has been clicked.
         Will add functionality to add to shopping list later.
         May add logic to show which items are already in Shopping List? */}
-        <h3>{ingredient.name}</h3>
+        <h4>{ingredient.name}</h4>
 
         <div className="ingredient-list-item-image-container">
         <img src={this.state.imgUrl + ingredient.image}/>
@@ -119,14 +119,20 @@ render(){
   })
 
     return(
-      <div>
+      <div className="ingredient-list-outer-container">
+      <div className="row">
+      <div className="column">
+      <div className="ingredient-list-header">
       <h2>Ingredients</h2>
       <h3 onClick={ () => this.handleUnitsClick()}>Units: {this.state.currentUnits}</h3>
+      </div>
+      </div>
+      </div>
+
 
       <div className="ingredient-list-container">
       {ingredientList}
       </div>
-      <button>Save Shopping List.</button>
       </div>
     )
   }

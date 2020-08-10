@@ -37,13 +37,110 @@
   }
 }
 
+.main-container{
+  display: flex;
+}
+
+/*
+____________RECIPE CONTAINER____________
+*/
+
+.recipe-container {
+  background-color: whitesmoke;
+  border: 2px solid silver;
+  border-radius: 16px;
+
+  flex-direction: column;
+    padding: 10px 10px 10px 10px;
+    max-width: 1100px;
+}
+
+.recipe-instructions{
+  display: inline;
+  text-align: justify;
+}
+
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.recipe-container-image-and-directions{
+  flex: 100%;
+  padding: 10px 10px 10px;
+  max-width: 800px;
+}
+
+.recipe-container img {
+  max-width: 300px;
+  max-height: 300px;
+    margin: 10px 10px 10px 0;
+}
+
+#id{
+  flex-shrink: 0;
+}
+
+#floated{
+  float:left
+}
+
+.ingredients{
+  flex: 30%;
+  border: 3px solid blue;
+  padding: 10px 10px 10px;
+  max-width: 400px;
+}
+
+
+
+
+/*
+____________INGREDIENT LIST CONTAINER____________
+*/
+
+.ingredient-list-outer-container{
+  background-color: #EFF5FB;
+
+  border: 2px solid #9EC3E6;
+  border-radius: 16px;
+  max-width: 500px;
+  margin-left: 30px;
+}
+
 .ingredient-list-container {
+  max-height: 500px;
+  overflow: auto;
+    max-width: 500px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
  }
 
+ .ingredient-list-header h2{
+   padding-left: 50px;
+   float:left;
+ }
+ .ingredient-list-header h3{
+   padding-right: 50px;
+   float:right;
+ }
+
 .ingredient-list-item {
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 16px;
     flex: 0 0 150px; /*  No stretching: */
     justify-content: center;
     margin-bottom: 15px;
@@ -51,16 +148,15 @@
     margin-right: 2px;
   }
 
-  .ingredient-list-item h3{
+  .ingredient-list-item h4{
     line-height: 1em;
-    height: 1.5em;       /* height is 2x line-height, so two lines will display */
+    height: 1.5em;
 }
 
 .ingredient-list-item p{
   line-height: 1em;
-  height: 1em;       /* height is 2x line-height, so two lines will display */
+  height: 1em;
 }
-
 
   .ingredient-list-item-image-container{
     display: grid;
@@ -76,3 +172,7 @@
   max-height: 120px;
   margin: auto;
 }
+
+/*
+____________TBC CONTAINER____________
+*/

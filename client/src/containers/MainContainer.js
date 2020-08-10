@@ -11,15 +11,11 @@ const MainContainer = () => {
 return(
     <Fragment>
       <NavBar/>
-      <RecipeContainer recipeID="716429"/>
+      <RecipeContainer className="recipe_container" recipeID="716400"/>
       <ListContainer/>
       <SearchContainer/>
     </Fragment>
-      
-        <SearchContainer/>
 
-      </Fragment>
-      </Router>
       )
   }
 

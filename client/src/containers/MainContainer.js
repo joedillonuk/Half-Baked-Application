@@ -15,6 +15,11 @@ return(
       <ListContainer/>
       <SearchContainer/>
     </Fragment>
+      
+        <SearchContainer/>
+
+      </Fragment>
+      </Router>
       )
   }
 

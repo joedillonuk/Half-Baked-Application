@@ -1,11 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-const IntolerenceList = (props) => {
-  // if (props.allergy.length() > 0){
-  //   props.allergy.map(allergy => {
-  //     return <p>{allergy}</p>
-  //   })
-  return <p>Intolerences go here</p>
+const IntolerenceList = ({intolerences}) => {
+  const hackyFix = String(intolerences).split(",");
+  const items = hackyFix.map(item => {
+    return <p>{item}</p>
+  })
 
-  }
-export default IntolerenceList
+  return(
+      <div>
+        <p>intolerences placeholder</p>
+        {items}
+      </div>
+    )
+}
+
+
+export default IntolerenceList;

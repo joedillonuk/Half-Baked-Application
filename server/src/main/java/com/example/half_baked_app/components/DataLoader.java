@@ -28,6 +28,7 @@ public class DataLoader implements ApplicationRunner {
 
         User user1 = new User("John", "Smith");
         user1.addintolerences("Peanut");
+        user1.addintolerences("Shellfish");
         user1.addDietaryNeeds("Vegan");
         userRepository.save(user1);
 

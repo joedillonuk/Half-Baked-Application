@@ -4,9 +4,13 @@
 
 import React, {Component, Fragment} from 'react';
 
+import Blacklist from '../components/list/Blacklist.js';
+import DietaryList from '../components/list/DietaryList.js';
 import IntolerenceList from '../components/list/IntolerenceList.js';
+import SavedRecipes from '../components/list/SavedRecipes.js';
+import ShoppingList from '../components/list/ShoppingList.js';
 
-class SimpleListContainer extends Component{
+class ListContainer extends Component{
   constructor(props){
     super(props);
 
@@ -24,25 +28,27 @@ class SimpleListContainer extends Component{
 
     fetch(url)
     .then(res => res.json())
-    .then(users => this.setState({users: users.result}))
+    .then(data => this.setState({users: data[0], isLoading: false}))
     .catch(error => console.error)
-    .then(this.setState({isLoading: false}))
   }
 
   //RENDER STARTS HERE
   render(){
-    if (!this.isLoading){
+    const {users} = this.state;
+    if(!users){
+      return <p>"Loading..."</p>
+    }
       return(
         <Fragment>
-        <p>Shopping List</p>
-        <p>Dietary Needs</p>
-        <p>Blacklist</p>
-        <p>Saved Recipies</p>
+          <Blacklist/>
+          <SavedRecipes/>
+          <DietaryList/>
+          <IntolerenceList intolerences={this.state.users.intolerences}/>
+          <ShoppingList/>
         </Fragment>
       )
     }
-  }
 }
 
 
-export default SimpleListContainer;
+export default ListContainer;

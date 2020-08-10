@@ -4,7 +4,8 @@ const ListOfRecipes = () => {
   return(
 
 
-    <div>
+    <div className="list-of-recipes">
+    <h3>Recipies:</h3>
     <ul>
       <li>Spaget</li>
       <li>Boll</li>

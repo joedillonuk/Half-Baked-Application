@@ -27,25 +27,25 @@ class MainContainer extends Component{
   }
 
   currentView(){
-  if (this.state.view[0] === "savedRecipes"){
-    return(
-      <RecipeContainer recipeID="716400" view={this.state.view}/>
+    if (this.state.view[0] === "savedRecipes"){
+      return(
+        <RecipeContainer recipeID="716400" view={this.state.view}/>
 
-    )
-  }
+      )
+    }
 
-  if (this.state.view[0] === "list"){
-    return(
-      <ListContainer view={this.state.view}/>
-    )
-  }
+    if (this.state.view[0] === "list"){
+      return(
+        <ListContainer view={this.state.view}/>
+      )
+    }
 
-  if (this.state.view[0] === "search"){
-    return(
-      <SearchContainer view={this.state.view}/>
-    )
-  }
-  return <h1>I do return something</h1>
+    if (this.state.view[0] === "search"){
+      return(
+        <SearchContainer view={this.state.view}/>
+      )
+    }
+    return null;
   }
 
   //Add in the RecipeContainer to the switch again
@@ -55,16 +55,24 @@ class MainContainer extends Component{
 
 
 
-      return(
-        <Fragment>
+    return(
+      <div>
+      <NavBar handleViewChange={this.handleViewChange}/>
+      {this.currentView()}
+        <div className="main-container">
 
-        <NavBar handleViewChange={this.handleViewChange}/>
-        <ListOfRecipes />
-        <RecipeContainer recipeID="716400" view={this.state.view}/>
+          <tr>
+            <td id="list-of-recipes">
+              <ListOfRecipes />
+            </td>
 
-        {this.currentView()}
-        </Fragment>
-      )
+            <td id="recipe-container">
+            <RecipeContainer recipeID="716400" view={this.state.view}/>
+            </td>
+          </tr>
+        </div>
+      </div>
+    )
 
   }
 }

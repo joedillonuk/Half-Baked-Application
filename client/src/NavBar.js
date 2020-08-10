@@ -7,7 +7,7 @@ const NavBar = (props) => {
   }
 
   return(
-    <header>
+    <header className="nav-bar">
     <h2> THIS IS THE NAV BAR </h2>
 
     <button value="savedRecipes" onClick={handleNavClick}>My Recpies</button>

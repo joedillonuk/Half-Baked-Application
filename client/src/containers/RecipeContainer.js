@@ -19,7 +19,7 @@ class RecipeContainer extends Component{
   // LOGIC STARTS HERE
 
   componentWillMount(){
-  const url = `https://api.spoonacular.com/recipes/${this.props.recipeID}/information?apiKey=5af7f33cbe434a64b6e95daa599e2837`
+  const url = `https://api.spoonacular.com/recipes/${this.props.recipeID}/information?apiKey=94c5356f0eb24c80821176ea3ea11789`
   fetch(url)
   .then(res => res.json())
   .then(recipe => this.setState({selectedRecipe: recipe}))

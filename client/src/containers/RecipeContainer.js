@@ -19,6 +19,10 @@ class RecipeContainer extends Component{
   // LOGIC STARTS HERE
 
   componentWillMount(){
+<<<<<<< HEAD
+=======
+  this.setState({isLoading: true});
+>>>>>>> feature/recipe_styling
   const url = `https://api.spoonacular.com/recipes/${this.props.recipeID}/information?apiKey=5af7f33cbe434a64b6e95daa599e2837`
   fetch(url)
   .then(res => res.json())
@@ -34,12 +38,24 @@ class RecipeContainer extends Component{
       return <p>"Loading..."</p>
     }
     return(
-      <Fragment>
-        <ListOfRecipes/>
-        <img src={this.state.selectedRecipe.image}/>
-        <RecipeInstructions selectedRecipe={this.state.selectedRecipe}/>
+
+      <div className="recipe-container">
+        {/* Removing ListOfRecipes from RecipeContainer
+            May move to MainContainer
+          <ListOfRecipes/> */}
+          <h2 id="header">{this.state.selectedRecipe.title}</h2>
+        <div className="row">
+        <div className="column">
+        <div className="recipe-container-image-and-directions">
+        <img id="floated" src={this.state.selectedRecipe.image}/>
+        <RecipeInstructions selectedRecipe={this.state.selectedRecipe} />
+        </div>
+        </div>
+        <div className="column">
         <IngredientList ingredients={this.state.selectedRecipe.extendedIngredients} />
-      </Fragment>
+        </div>
+        </div>
+    </div>
     )
   }
 }

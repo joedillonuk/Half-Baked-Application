@@ -5,6 +5,7 @@ import RecipeContainer from './RecipeContainer.js';
 import ListContainer from './ListContainer.js';
 import SearchContainer from './SearchContainer.js';
 
+<<<<<<< HEAD
 class MainContainer extends Component{
   constructor(props){
     super(props);
@@ -47,6 +48,19 @@ class MainContainer extends Component{
         <NavBar handleViewChange={this.handleViewChange}/>
         <SearchContainer view={this.state.view}/>
         </Fragment>
+=======
+const MainContainer = () => {
+
+//Add in the RecipeContainer to the switch again
+return(
+    <Fragment>
+      <NavBar/>
+      <RecipeContainer className="recipe_container" recipeID="716400"/>
+      <ListContainer/>
+      <SearchContainer/>
+    </Fragment>
+
+>>>>>>> feature/recipe_styling
       )
     }
 

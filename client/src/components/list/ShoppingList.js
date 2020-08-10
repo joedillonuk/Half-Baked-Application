@@ -2,7 +2,20 @@ import React from 'react'
 
 const ShoppingList = (props) => {
 
-  return <p>Shopping List go here</p>
+  if (!props){
+    return null;
+  }
+  const items = props.shoppingList.map(item => {
+      return <p>{item.name}</p>
+
+  })
+
+  return(
+      <div>
+        <p>ShoppingList placeholder</p>
+        {items}
+      </div>
+    )
 
   }
 export default ShoppingList;

@@ -6,7 +6,7 @@ import React, {Component, Fragment} from 'react';
 
 import Blacklist from '../components/list/Blacklist.js';
 import DietaryList from '../components/list/DietaryList.js';
-import IntolerenceList from '../components/list/IntolerenceList.js';
+import IntoleranceList from '../components/list/IntoleranceList.js';
 import SavedRecipes from '../components/list/SavedRecipes.js';
 import ShoppingList from '../components/list/ShoppingList.js';
 
@@ -16,7 +16,10 @@ class ListContainer extends Component{
 
     this.state={
       isLoading: false,
-      users: []
+      intolerances: [],
+      dietaryNeeds: [],
+      shoppingList: [],
+      recipes:[]
     }
   }
 
@@ -24,30 +27,69 @@ class ListContainer extends Component{
   componentDidMount(){
     this.setState({isLoading: true});
 
-    const url = "http://localhost:8080/api/users"
+    const url = "http://localhost:8080/api/intolerances"
 
     fetch(url)
     .then(res => res.json())
-    .then(data => this.setState({users: data[0], isLoading: false}))
+    .then(data => this.setState({intolerances: data}))
+    .catch(error => console.error)
+
+    const url1 = "http://localhost:8080/api/dietary_needs"
+
+    fetch(url1)
+    .then(res => res.json())
+    .then(data => this.setState({dietaryNeeds: data}))
+    .catch(error => console.error)
+
+    const url2 = "http://localhost:8080/api/recipes"
+
+    fetch(url2)
+    .then(res => res.json())
+    .then(data => this.setState({recipes: data}))
+    .catch(error => console.error)
+
+    const url3 = "http://localhost:8080/api/shopping_list"
+
+    fetch(url3)
+    .then(res => res.json())
+    .then(data => this.setState({shoppingList: data, isLoading: false}))
     .catch(error => console.error)
   }
 
   //RENDER STARTS HERE
   render(){
-    const {users} = this.state;
-    if(!users){
-      return <p>"Loading..."</p>
+    if (this.props.view[0] === "list"){
+      const {shoppingList} = this.state;
+      if(!shoppingList){
+        return <p>"Loading..."</p>
+      }
+
+
+      if(this.props.view[1] === "recipes"){
+        return(
+          <Fragment>
+          <Blacklist blacklist={this.state.recipes}/>
+          <SavedRecipes recipes={this.state.recipes}/>
+          </Fragment>
+        )
+      }
+      if(this.props.view[1] === "dietary"){
+        return(
+          <Fragment>
+          <DietaryList dietaryNeeds={this.state.dietaryNeeds}/>
+          <IntoleranceList intolerances={this.state.intolerances}/>
+          </Fragment>
+        )
+      }
+      if(this.props.view[1] === "shopping"){
+        return(
+          <Fragment>
+          <ShoppingList shoppingList={this.state.shoppingList}/>
+          </Fragment>
+        )
+      }
     }
-      return(
-        <Fragment>
-          <Blacklist/>
-          <SavedRecipes/>
-          <DietaryList/>
-          <IntolerenceList intolerences={this.state.users.intolerences}/>
-          <ShoppingList/>
-        </Fragment>
-      )
-    }
+  }
 }
 
 

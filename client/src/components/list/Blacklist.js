@@ -1,20 +1,21 @@
 import React from 'react'
 
 const Blacklist = (props) => {
-  // if(props.recipeList.length() != 0){
-  //   props.recipeList.map(item => {
-  //     if(item.blacklist === true){
-  //       return <p>{item.name}</p>
-  //     }
-  //   })
-  // }
+  if (!props){
+    return null;
+  }
+  const items = props.blacklist.map(item => {
+    if (item.blacklist){
+      return <p>{item.name}</p>
+    }
+
+  })
 
   return(
-    <div>
-    <p>Blacklist goes here</p>
-
-    </div>
-  )
-
+      <div>
+        <p>Blacklist recipes placeholder</p>
+        {items}
+      </div>
+    )
   }
 export default Blacklist;

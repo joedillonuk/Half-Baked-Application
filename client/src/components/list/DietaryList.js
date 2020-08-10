@@ -2,7 +2,22 @@ import React from 'react'
 
 const DietaryList = (props) => {
 
-  return <p>DietaryList go here</p>
+  if (!props){
+    return null;
+  }
+  const items = props.dietaryNeeds.map(item => {
+
+      return <p>{item.name}</p>
+    
+
+  })
+
+  return(
+      <div>
+        <p>Dietary Needs placeholder</p>
+        {items}
+      </div>
+    )
 
   }
 export default DietaryList;

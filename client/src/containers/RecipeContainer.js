@@ -11,7 +11,7 @@ class RecipeContainer extends Component{
     super(props);
 
     this.state={
-      isLoading: false,
+
       selectedRecipe: null
     }
   }
@@ -19,18 +19,18 @@ class RecipeContainer extends Component{
   // LOGIC STARTS HERE
 
   componentWillMount(){
-  this.setState({isLoading: true});
-  const url = `https://api.spoonacular.com/recipes/${this.props.recipeID}/information?apiKey=412af1d196fd4a28af649ebd01a51d74`
+  const url = `https://api.spoonacular.com/recipes/${this.props.recipeID}/information?apiKey=5af7f33cbe434a64b6e95daa599e2837`
   fetch(url)
   .then(res => res.json())
-  .then(recipe => this.setState({selectedRecipe: recipe, isLoading: false}))
+  .then(recipe => this.setState({selectedRecipe: recipe}))
   .catch(error => console.error)
 };
 
   //RENDER STARTS HERE
   render(){
-    const {isLoading} = this.state;
-    if(isLoading){
+    const {selectedRecipe} = this.state;
+
+    if(!selectedRecipe){
       return <p>"Loading..."</p>
     }
     return(
@@ -43,5 +43,6 @@ class RecipeContainer extends Component{
     )
   }
 }
+
 
 export default RecipeContainer;

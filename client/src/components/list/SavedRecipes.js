@@ -2,7 +2,22 @@ import React from 'react'
 
 const SavedRecipes = (props) => {
 
-  return <p>Saved Recipes go here</p>
+  if (!props){
+    return null;
+  }
+  const items = props.recipes.map(item => {
+    if (!item.blacklist){
+      return <p>{item.name}</p>
+    }
+
+  })
+
+  return(
+      <div>
+        <p>SavedRecipes placeholder</p>
+        {items}
+      </div>
+    )
 
   }
 export default SavedRecipes;

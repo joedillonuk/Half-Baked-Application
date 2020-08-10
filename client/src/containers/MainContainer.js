@@ -1,31 +1,26 @@
 import React, {Fragment} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../NavBar.js';
 
 import RecipeContainer from './RecipeContainer.js';
-import SimpleListContainer from './SimpleListContainer.js';
-
+import ListContainer from './ListContainer.js';
 import SearchContainer from './SearchContainer.js';
 
 const MainContainer = () => {
 
 //Add in the RecipeContainer to the switch again
-  return(
-    <Router>
-      <Fragment>
+return(
+    <Fragment>
       <NavBar/>
-      <Switch>
-
-
-        <RecipeContainer recipeID="716430"/>
-        <SimpleListContainer/>
+      <RecipeContainer recipeID="716429"/>
+      <ListContainer/>
+      <SearchContainer/>
+    </Fragment>
+      
         <SearchContainer/>
 
-
-      </Switch>
       </Fragment>
       </Router>
       )
-      }
+  }
 
-      export default MainContainer;
+export default MainContainer;

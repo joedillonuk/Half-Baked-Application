@@ -8,9 +8,4 @@ const IntolerenceList = (props) => {
   return <p>Intolerences go here</p>
 
   }
-
-
-
-
-
 export default IntolerenceList

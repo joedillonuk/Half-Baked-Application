@@ -5,13 +5,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
  @Entity
  @Table(name="dietaryNeeds")
- public class DietaryNeeds {
+ public class DietaryNeed {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
-        private Long dietaryNeedsID;
         private String name;
 
         @JsonIgnoreProperties({"dietaryNeeds"})
@@ -21,13 +20,38 @@ import javax.persistence.*;
 
         //CONSTRUCTORS
 
-        public DietaryNeeds(Long dietaryNeedID, String name, User user){
-            this.dietaryNeedsID = dietaryNeedsID;
+        public DietaryNeed(String name, User user){
             this.name = name;
             this.user = user;
         }
 
-        public DietaryNeeds(){
+        public DietaryNeed(){
         }
-    }
+
+     public Long getId() {
+         return id;
+     }
+
+     public void setId(Long id) {
+         this.id = id;
+     }
+
+     public String getName() {
+         return name;
+     }
+
+     public void setName(String name) {
+         this.name = name;
+     }
+
+     public User getUser() {
+         return user;
+     }
+
+     public void setUser(User user) {
+         this.user = user;
+     }
+
+
+ }
 

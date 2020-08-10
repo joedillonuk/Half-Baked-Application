@@ -26,18 +26,19 @@ public class User {
     private String lastName;
 
 
-    @Column(name = "dietary_needs")
-    private ArrayList<String> dietaryNeeds;
+    @JsonIgnoreProperties({"users"})
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<DietaryNeed> dietaryNeeds;
 
+    @JsonIgnoreProperties({"users"})
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Intolerance> intolerences;
 
-    @Column(name = "intolerences")
-    private ArrayList<String> intolerences;
+    @JsonIgnoreProperties({"users"})
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<ShoppingListItem> shoppingList;
 
-
-    @Column(name= "shopping_list")
-    private ArrayList<String> shoppingList;
-
-    @JsonBackReference
+    @JsonIgnoreProperties({"users"})
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Recipe> savedRecipes;
 
@@ -46,9 +47,9 @@ public class User {
     public User(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.dietaryNeeds = new ArrayList<String>();
-        this.intolerences = new ArrayList<String>();
-        this.shoppingList = new ArrayList<String>();
+        this.dietaryNeeds = new ArrayList<DietaryNeed>();
+        this.intolerences = new ArrayList<Intolerance>();
+        this.shoppingList = new ArrayList<ShoppingListItem>();
         this.savedRecipes = new ArrayList<Recipe>();
     }
 
@@ -82,36 +83,36 @@ public class User {
         this.lastName = lastName;
     }
 
-    public List<String> getAllDietaryNeeds() {
+    public List<DietaryNeed> getAllDietaryNeeds() {
         return dietaryNeeds;
     }
 
-    public void addDietaryNeeds(String diet) {
-        this.dietaryNeeds.add(diet);
+    public void addDietaryNeeds(DietaryNeed dietaryNeed) {
+        this.dietaryNeeds.add(dietaryNeed);
     }
 
-    public void removeDietaryNeeds(String diet){
-        this.dietaryNeeds.remove(diet);
+    public void removeDietaryNeeds(DietaryNeed dietaryNeed){
+        this.dietaryNeeds.remove(dietaryNeed);
     }
 
-    public ArrayList<String> getintolerences() {
+    public List<Intolerance> getIntolerences() {
         return intolerences;
     }
 
-    public void addintolerences(String allergy) {
-        this.intolerences.add(allergy);
+    public void addIntolerences(Intolerance intolerance) {
+        this.intolerences.add(intolerance);
     }
 
-   public void removeintolerences(String allergy) {
-        this.intolerences.remove(allergy);
+   public void removeintolerences(Intolerance intolerance) {
+        this.intolerences.remove(intolerance);
     }
 
-    public ArrayList<String> getShoppingList() {
+    public List<ShoppingListItem> getShoppingList() {
         return shoppingList;
     }
 
-    public void addToShoppingList(String item) {
-        this.shoppingList.add(item);
+    public void addToShoppingList(ShoppingListItem shoppingListItem) {
+        this.shoppingList.add(shoppingListItem);
     }
 
     public void removeFromShoppingList(String item) {

@@ -1,9 +1,7 @@
 package com.example.half_baked_app.components;
 
-import com.example.half_baked_app.models.Recipe;
-import com.example.half_baked_app.models.User;
-import com.example.half_baked_app.repository.RecipeRepository;
-import com.example.half_baked_app.repository.UserRepository;
+import com.example.half_baked_app.models.*;
+import com.example.half_baked_app.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -18,6 +16,15 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     RecipeRepository recipeRepository;
 
+    @Autowired
+    DietaryNeedRepository dietaryNeedRepository;
+
+    @Autowired
+    IntoleranceRepository intoleranceRepository;
+
+    @Autowired
+    ShoppingListItemRepository shoppingListItemRepository;
+
     public DataLoader(){
 
     }
@@ -27,10 +34,26 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args){
 
         User user1 = new User("John", "Smith");
-        user1.addintolerences("Peanut");
-        user1.addintolerences("Shellfish");
-        user1.addDietaryNeeds("Vegan");
         userRepository.save(user1);
+
+        DietaryNeed dietaryNeed1 = new DietaryNeed("Vegan", user1);
+        dietaryNeedRepository.save(dietaryNeed1);
+
+        Intolerance intolerance1 = new Intolerance("Peanut", user1);
+        intoleranceRepository.save(intolerance1);
+
+        Intolerance intolerance2 = new Intolerance("Shellfish", user1);
+        intoleranceRepository.save(intolerance2);
+
+        ShoppingListItem shoppingListItem1 = new ShoppingListItem("Bread", user1);
+        shoppingListItemRepository.save(shoppingListItem1);
+
+        ShoppingListItem shoppingListItem2 = new ShoppingListItem("Avocado", user1);
+        shoppingListItemRepository.save(shoppingListItem2);
+
+        ShoppingListItem shoppingListItem3 = new ShoppingListItem("Vegan Cheese", user1);
+        shoppingListItemRepository.save(shoppingListItem3);
+
 
         Recipe recipe1 = new Recipe(1L, "Taste Test Blacklist", user1, true);
         recipeRepository.save(recipe1);
@@ -40,6 +63,12 @@ public class DataLoader implements ApplicationRunner {
 
         user1.addToSavedRecipes(recipe1);
         user1.addToSavedRecipes(recipe2);
+        user1.addDietaryNeeds(dietaryNeed1);
+        user1.addIntolerences(intolerance1);
+        user1.addIntolerences(intolerance2);
+        user1.addToShoppingList(shoppingListItem1);
+        user1.addToShoppingList(shoppingListItem2);
+        user1.addToShoppingList(shoppingListItem2);
         userRepository.save(user1);
 
 

@@ -23,9 +23,6 @@ const IntoleranceList = (props) => {
       <div className="row">
 
         <p>intolerances:</p>
-      
-
-
         {items}
         </div>
         </div>

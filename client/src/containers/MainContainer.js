@@ -10,6 +10,7 @@ class MainContainer extends Component{
     super(props);
 
     this.state={
+      currentUser: null,
       view: "recipe",
       recipeList: [
     {
@@ -5021,12 +5022,21 @@ class MainContainer extends Component{
   currentView(){
 
 
-    if (this.state.view === "dietary" || this.state.view === "shopping"){
+    if (this.state.view === "dietary" || this.state.view === "shopping" || this.state.view === "search"){
       return(
         <ListContainer search={this.onSearchSubmit} view={this.state.view} />
       )
     }
   }
+
+  componentDidMount(){
+    fetch('http://localhost:8080/api/users')
+    .then(res => res.json())
+    .then(user => this.setState({currentUser: user[0]}))
+    .catch(error => console.error)
+  }
+
+
 
 
 

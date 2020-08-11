@@ -88,7 +88,6 @@ class ListContainer extends Component{
 
           <IntoleranceList intolerances={this.state.intolerances}/>
           <DietaryList intolerances={this.state.intolerances}/>
-          <SearchFilters search={this.props.search}/>
           </Fragment>
         )
       }
@@ -97,6 +96,13 @@ class ListContainer extends Component{
           <Fragment>
           <ShoppingList shoppingList={this.state.shoppingList}/>
           </Fragment>
+        )
+      }
+
+      if(this.props.view === "search"){
+        return(
+
+          <SearchFilters search={this.props.search}/>
         )
       }
     }

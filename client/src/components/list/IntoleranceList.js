@@ -8,18 +8,26 @@ const IntoleranceList = (props) => {
   const knownIntolerances = ["Dairy", "Egg", "Gluten", "Grain", "Peanut", "Seafood", "Sesame", "Shellfish", "Soy", "Sulfite", "Tree Nut", "Wheat"];
 
 
-  const items = knownIntolerances.map(item => {
+  const items = knownIntolerances.map((item, index) => {
     // if (props.intolerances.user_id == 0){
-      return <p>{item}</p>
+      return <div className="intolerance-list-item">
+                <p key="index">{item}</p>
+            </div>
     // }
 
   })
 
 
   return(
-      <div>
-        <p>intolerances placeholder</p>
+      <div className="intolerance-list">
+      <div className="row">
+      <div className="column">
+        <p>intolerances:</p>
+        </div>
+
         {items}
+
+        </div>
       </div>
     )
 }

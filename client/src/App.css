@@ -38,6 +38,34 @@
   }
 }
 
+/*
+____________Intolerance List CONTAINER____________
+*/
+
+.intolerance-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+.intolerance-list-item{
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 16px;
+    flex: 0 0 100px; /*  No stretching: */
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.intolerance-list-item:hover{
+  background-color: red;
+
+}
+
+
 
 
 /*

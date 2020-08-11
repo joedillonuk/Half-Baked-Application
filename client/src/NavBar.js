@@ -10,17 +10,11 @@ const NavBar = (props) => {
   }
 
 
-
-  return(
-<<<<<<< HEAD
-    <header className="nav-bar">
-=======
-    <header>
-
->>>>>>> develop
-    <h2> THIS IS THE NAV BAR </h2>
-
-    <button value="savedRecipes" onClick={handleNavClick}>My Recpies</button>
+return(
+  <header className="nav-bar">
+  <img width="260.8" height="44.6" src={HalfBakedLogo3} alt="Logo"></img>
+  <br/>
+<button value="savedRecipes" onClick={handleNavClick}>My Recpies</button>
     <button value="shopping" onClick={handleNavClick}>My Shopping List Recpies</button>
     <button value="dietary" onClick={handleNavClick}>My Dietary Needs and Intolerances</button>
     </header>

@@ -12,22 +12,21 @@ class SearchContainer extends Component{
     super(props);
 
     this.state={
-      setFilters:["Test1", "Test2"]
     }
   }
 
   // LOGIC STARTS HERE
 
+handleChosenFilters(ingredientFilters,dietaryFilters,intoleranceFilters){
+
+}
 
   //RENDER STARTS HERE
   render(){
     return(
       <div>
         <p> This is the Search Container </p>
-        <SearchFilters/>
-        <ActiveFiltersList setFilters={this.state.setFilters}/>
-        <button>Clear Filters</button>
-        <button>Submit(placeholder)</button>
+        <SearchFilters handleChosenFilters={this.handleChosenFilters}/>
       </div>
     )
   }

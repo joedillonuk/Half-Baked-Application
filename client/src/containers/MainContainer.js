@@ -11,7 +11,7 @@ class MainContainer extends Component{
     super(props);
 
     this.state={
-      view: ["recipe"]
+      view: ["search"]
 
     }
     this.handleViewChange = this.handleViewChange.bind(this);

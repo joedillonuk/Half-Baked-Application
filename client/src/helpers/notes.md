@@ -1,7 +1,8 @@
 Donald API key: 412af1d196fd4a28af649ebd01a51d74
-Joe API key: 5af7f33cbe434a64b6e95daa599e2837
+Joe API key: 51490b107e3d43d4952af6c89476cd42
 Donald API key2: 94c5356f0eb24c80821176ea3ea11789
 Donald API key 3: 919df1b260584275af3f87fd3ef98fd5
+Joe Key 2: 204344e0b67248caad507656026e4ace
 
 Search Recipes:
 https://spoonacular.com/food-api/docs#Search-Recipes-Complex

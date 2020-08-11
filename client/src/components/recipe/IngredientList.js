@@ -97,7 +97,14 @@ isItemInThisStateShoppingList(item){
 
 render(){
 
+
+
+
+
+
+
   const ingredientList = this.props.ingredients.map((ingredient, index) => {
+
     return (
       <div key={index} onClick={ () => this.handleItemClick(ingredient)} className="ingredient-list-item" value={ingredient}>
 
@@ -136,7 +143,7 @@ render(){
       </div>
     )
   }
-  }
+}
 
 
 export default IngredientList;

@@ -17,6 +17,7 @@ return(
 <button value="savedRecipes" onClick={handleNavClick}>My Recpies</button>
     <button value="shopping" onClick={handleNavClick}>My Shopping List Recpies</button>
     <button value="dietary" onClick={handleNavClick}>My Dietary Needs and Intolerances</button>
+
     </header>
   )
 

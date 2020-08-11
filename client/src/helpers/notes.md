@@ -1,13 +1,16 @@
 Donald API key: 412af1d196fd4a28af649ebd01a51d74
 Joe API key: 5af7f33cbe434a64b6e95daa599e2837
 Donald API key2: 94c5356f0eb24c80821176ea3ea11789
+Donald API key 3: 919df1b260584275af3f87fd3ef98fd5
 
 Search Recipes:
 https://spoonacular.com/food-api/docs#Search-Recipes-Complex
 
 https://api.spoonacular.com/recipes/complexSearch
 
+https://api.spoonacular.com/recipes/complexSearch?query=egg,bacon&intolerances=Soy&apiKey=919df1b260584275af3f87fd3ef98fd5
 
+https://api.spoonacular.com/recipes/complexSearch?query=egg,bacon&intolerances=Soy?apiKey=919df1b260584275af3f87fd3ef98fd5
 
 query (string, like "pasta")
 cuisine (string, like "Italian")

@@ -5,19 +5,28 @@ const DietaryList = (props) => {
   if (!props){
     return null;
   }
-  const items = props.dietaryNeeds.map(item => {
 
-      return <p>{item.name}</p>
-    
+const knownDiets = ["Gluten Free", "Ketogenic", "Vegetarian", "Lactovegetarian", "Ovo-Vegetarian", "Vegan", "Pescetarian", "Paleo", "Primal", "Whole30"]
 
-  })
+const items = knownDiets.map((item, index) => {
+  // if (props.intolerances.user_id == 0){
+    return <li className="intolerance-list-item" key={index}>
+              <p>{item}</p>
+          </li>
+  // }
 
-  return(
-      <div>
-        <p>Dietary Needs placeholder</p>
-        {items}
+})
+
+
+return(
+    <div className="intolerance-list">
+    <div className="row">
+
+      <p>Dietary needs:</p>
+      {items}
       </div>
-    )
+      </div>
 
-  }
+  )
+}
 export default DietaryList;

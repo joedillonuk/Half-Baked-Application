@@ -6,7 +6,7 @@ class SearchFilers extends React.Component {
     super(props);
 
     this.state = {
-      ingredientFilters: [],
+      ingredientFilters: "",
       dietaryFilters: [],
       intoleranceFilters: []
 
@@ -20,26 +20,13 @@ class SearchFilers extends React.Component {
   //LOGIC HERE
 
   handleIngredientFilter(event){
-    const filters = this.state.ingredientFilters;
     let newFilter = event.target.value;
-    let index
+
+    console.log(newFilter);
 
 
-    if(event.target.name === "ingredientName1"){
-      index = 0;
-    }
-    else if(event.target.name === "ingredientName2"){
-      index = 1;
-    }
-    else if(event.target.name === "ingredientName3"){
-      index = 2;
-    }
-    else if(event.target.name === "ingredientName4"){
-      index = 3;
-    }
-    filters.splice(index,1, newFilter);
     this.setState({
-      ingredientFilters: filters
+      ingredientFilters: newFilter
     })
   }
 
@@ -83,9 +70,8 @@ class SearchFilers extends React.Component {
     event.preventDefault();
     if(this.state.ingredientFilters.length > 0 ){
       let search = "https://api.spoonacular.com/recipes/complexSearch?query="
-      this.state.ingredientFilters.forEach(function(item){ search = search + item + ","})
+      search = search + this.state.ingredientFilters
       //take off the extra comma
-      search = search.slice(0,-1)
       if(this.state.dietaryFilters.length > 0 ){
         search = search + "&diet="
         this.state.dietaryFilters.forEach(function(item){ search = search + item + ","})
@@ -97,7 +83,7 @@ class SearchFilers extends React.Component {
         search = search.slice(0,-1)
       }
       //return the search url
-      console.log(search)
+      this.props.search(search);
     }
   }
 
@@ -111,9 +97,6 @@ class SearchFilers extends React.Component {
 
       <label>Ingredient name:</label>
       <input onChange={this.handleIngredientFilter} type="text" id="ingredientName1" name="ingredientName1"></input>
-      <input onChange={this.handleIngredientFilter} type="text" id="ingredientName2" name="ingredientName2"></input>
-      <input onChange={this.handleIngredientFilter} type="text" id="ingredientName3" name="ingredientName3"></input>
-      <input onChange={this.handleIngredientFilter} type="text" id="ingredientName4" name="ingredientName4"></input>
 
       <h3> FIlter by Dietary Requirements :</h3>
 

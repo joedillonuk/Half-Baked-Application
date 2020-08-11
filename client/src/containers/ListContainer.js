@@ -9,6 +9,7 @@ import DietaryList from '../components/list/DietaryList.js';
 import IntoleranceList from '../components/list/IntoleranceList.js';
 import SavedRecipes from '../components/list/SavedRecipes.js';
 import ShoppingList from '../components/list/ShoppingList.js';
+import SearchFilters from '../components/search/SearchFilters';
 
 class ListContainer extends Component{
   constructor(props){
@@ -86,6 +87,8 @@ class ListContainer extends Component{
           <p onClick={this.expandDietary}>Dietary: Click to expand</p>
 
           <IntoleranceList intolerances={this.state.intolerances}/>
+          <DietaryList intolerances={this.state.intolerances}/>
+          <SearchFilters search={this.props.search}/>
           </Fragment>
         )
       }

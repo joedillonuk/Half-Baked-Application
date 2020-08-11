@@ -45,23 +45,25 @@ ____________Intolerance List CONTAINER____________
 .intolerance-list{
   display: flex;
   flex-wrap: wrap;
+  padding-left: 25px;
 }
 
 
 
 .intolerance-list-item{
-  background-color: white;
+  list-style-type: none;
+  background-color: RGBA(245,245,245,0.8);
   border: 2px solid #ccc;
-  border-radius: 16px;
+  border-radius: 10px;
     flex: 0 0 100px; /*  No stretching: */
     justify-content: center;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     margin-left: 2px;
     margin-right: 2px;
 }
 
 .intolerance-list-item:hover{
-  background-color: red;
+  background-color: RGBA(250,250,210,0.8);
 
 }
 
@@ -162,12 +164,21 @@ ____________LIST OF RECIPES____________
 
 }
 
-.list-of-recipes h3{
+.list-of-recipes h2{
   text-align: center;
 }
 
 .list-of-recipes ul{
   list-style-type: none;
+}
+
+.list-of-recipes li{
+  list-style-type: none;
+}
+
+.list-of-recipes p{
+  list-style-type: none;
+  margin-left: 25px;
 }
 
 /*

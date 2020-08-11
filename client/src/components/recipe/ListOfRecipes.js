@@ -3,14 +3,15 @@ import React from 'react';
 const ListOfRecipes = (props) => {
 
 const handleRecipeClick = (event) => {
-  console.log(event);
+  console.log("The item clicked was" + event.id);
   props.onReceiveRecipeClick(event);
 }
 
   const items = props.recipes.map((item, index) => {
     // if (props.intolerances.user_id == 0){
-      return <div  className="list-of-recipes-item">
-                <p key={index} onClick={() => handleRecipeClick(item.id)} value={item.id}>{item.title}</p>
+      return <div key={index} onClick={() => handleRecipeClick(item)} value={item}  className="list-of-recipes-item">
+                <p >{item.title} {item.id}</p>
+
             </div>
     // }
 

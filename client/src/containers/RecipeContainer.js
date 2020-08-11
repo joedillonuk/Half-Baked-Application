@@ -45,6 +45,9 @@ class RecipeContainer extends Component{
         <div className="recipe-container-image-and-directions">
         <img id="floated" src={this.state.selectedRecipe.image}/>
         <RecipeInstructions selectedRecipe={this.state.selectedRecipe} />
+
+        <p>Add to favourites</p>
+        <p>Blacklist Recipe</p>
         </div>
         </div>
         <div className="column">

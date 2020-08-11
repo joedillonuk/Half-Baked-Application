@@ -11,7 +11,7 @@ class MainContainer extends Component{
     super(props);
 
     this.state={
-      view: ["recipe"]
+      view: "recipe"
 
     }
     this.handleViewChange = this.handleViewChange.bind(this);
@@ -19,22 +19,14 @@ class MainContainer extends Component{
   }
 
   handleViewChange(event){
-    let newState = this.state.view.concat(event)
-
-    console.log(event)
-    console.log(newState);
-    this.setState({view: newState});
+    console.log(event);
+    this.setState({view: event});
   }
 
   currentView(){
-    if (this.state.view[0] === "savedRecipes"){
-      return(
-        <RecipeContainer recipeID="716400" view={this.state.view}/>
 
-      )
-    }
 
-    if (this.state.view[0] === "list"){
+    if (this.state.view === "dietary" || this.state.view === "shopping"){
       return(
         <ListContainer view={this.state.view}/>
       )
@@ -66,7 +58,7 @@ class MainContainer extends Component{
               <ListOfRecipes />
             </td>
 
-            <td id="recipe-container">
+          <td id="recipe-container">
             <RecipeContainer recipeID="716400" view={this.state.view}/>
             </td>
           </tr>

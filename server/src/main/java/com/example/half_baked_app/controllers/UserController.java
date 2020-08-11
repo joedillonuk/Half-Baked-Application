@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 public class UserController {
     @Autowired
     UserRepository userRepository;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+
     @GetMapping(value = "/users")
     public ResponseEntity<List<User>> getAllUsers() {
         return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
@@ -25,6 +26,7 @@ public class UserController {
         return new ResponseEntity<>(userRepository.findById(id), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PostMapping(value = "/users")
     public ResponseEntity<User> postUser(@RequestBody User user) {
         userRepository.save(user);

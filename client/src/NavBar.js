@@ -1,10 +1,14 @@
 import React from 'react';
 
+
+
 const NavBar = (props) => {
 
   function handleNavClick(event){
     props.handleViewChange(event.target.value);
   }
+
+
 
   return(
     <header className="nav-bar">

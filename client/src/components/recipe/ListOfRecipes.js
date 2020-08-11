@@ -7,7 +7,7 @@ const ListOfRecipes = () => {
     <div className="list-of-recipes">
     <h3>Recipies:</h3>
     <ul>
-      <li>Spaget</li>
+      <li><h4>Spaget</h4></li>
       <li>Boll</li>
       <li>Chip</li>
       <li>One Chicken</li>

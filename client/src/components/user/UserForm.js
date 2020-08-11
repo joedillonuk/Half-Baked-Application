@@ -8,6 +8,9 @@ class UserForm extends Component {
       user: {
         firstName: "",
         lastName: "",
+        age: 0,
+        gender: null,
+        weight: 0,
         intolerances: null,
         dietaryNeeds: null,
         shoppingList: null,
@@ -51,7 +54,7 @@ const dietaryNeedOption = this.props.dietaryNeeds.map((dietaryNeed, index) => {
         <form onSubmit={this.handleSubmit}>
           <input
           type="text"
-          placeholder=" First Name"
+          placeholder="First Name"
           name="firstName"
           onChange={this.handleChange}
           value={this.state.user.firstName}
@@ -59,10 +62,34 @@ const dietaryNeedOption = this.props.dietaryNeeds.map((dietaryNeed, index) => {
 
           <input
           type="text"
-          placeholder=" Last Name"
+          placeholder="Last Name"
           name="lastName"
           onChange={this.handleChange}
           value={this.state.user.lastName}
+          />
+
+          <input
+          type="number"
+          placeholder="Age"
+          name="age"
+          onChange={this.handleChange}
+          value={this.state.user.age}
+          />
+
+          <input
+          type="text"
+          placeholder="Gender"
+          name="gender"
+          onChange={this.handleChange}
+          value={this.state.user.gender}
+          />
+
+          <input
+          type="number"
+          placeholder="Weight"
+          name="weight"
+          onChange={this.handleChange}
+          value={this.state.user.weight}
           />
 
           <input

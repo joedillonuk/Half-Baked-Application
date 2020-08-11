@@ -33,7 +33,7 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args){
 
-        User user1 = new User("John", "Smith");
+        User user1 = new User("John", "Smith", 32, "male", 84);
         userRepository.save(user1);
 
         DietaryNeed dietaryNeed1 = new DietaryNeed("Vegan", user1);

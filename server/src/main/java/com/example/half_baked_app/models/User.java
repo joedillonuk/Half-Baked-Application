@@ -25,6 +25,14 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "age")
+    private Integer age;
+
+    @Column(name = "gender")
+    private String gender;
+
+    @Column(name = "weight")
+    private Integer weight;
 
     @JsonIgnoreProperties({"user"})
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
@@ -44,9 +52,12 @@ public class User {
 
     //CONSTRUCTOR
 
-    public User(String firstName, String lastName) {
+    public User(String firstName, String lastName, Integer age, String gender, Integer weight) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.age = age;
+        this.gender = gender;
+        this.weight = weight;
         this.dietaryNeeds = new ArrayList<DietaryNeed>();
         this.intolerances = new ArrayList<Intolerance>();
         this.shoppingList = new ArrayList<ShoppingListItem>();
@@ -81,6 +92,30 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public List<DietaryNeed> getDietaryNeeds() {

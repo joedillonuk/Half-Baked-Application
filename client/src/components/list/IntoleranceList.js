@@ -10,9 +10,9 @@ const IntoleranceList = (props) => {
 
   const items = knownIntolerances.map((item, index) => {
     // if (props.intolerances.user_id == 0){
-      return <div className="intolerance-list-item">
-                <p key="index">{item}</p>
-            </div>
+      return <li className="intolerance-list-item" key={index}>
+                <p>{item}</p>
+            </li>
     // }
 
   })
@@ -23,11 +23,11 @@ const IntoleranceList = (props) => {
       <div className="row">
 
         <p>intolerances:</p>
-      </div>
-      <div className="row">
+      
+
 
         {items}
-</div>
+        </div>
         </div>
 
     )

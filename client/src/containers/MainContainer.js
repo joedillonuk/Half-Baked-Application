@@ -4,6 +4,7 @@ import NavBar from '../NavBar.js';
 import RecipeContainer from './RecipeContainer.js';
 import ListContainer from './ListContainer.js';
 import ListOfRecipes from '../components/recipe/ListOfRecipes.js';
+import UserEditForm from '../components/user/UserEditForm.js'
 
 class MainContainer extends Component{
   constructor(props){
@@ -5528,17 +5529,21 @@ class MainContainer extends Component{
       ],
       "originalId": null,
       "spoonacularSourceUrl": "https://spoonacular.com/flank-steak-with-mushroom-sauce-631750"
-    }
+    },
+      toggleProfile: false
 
       }
       this.handleViewChange = this.handleViewChange.bind(this);
       this.currentView = this.currentView.bind(this);
       this.onSearchSubmit = this.onSearchSubmit.bind(this);
       this.onReceiveRecipeClick = this.onReceiveRecipeClick.bind(this);
+      this.handleProfileClick = this.handleProfileClick.bind(this);
     }
 
 
-
+  handleProfileClick(){
+    this.setState({toggleProfile: !this.state.toggleProfile})
+  }
 
   handleViewChange(event){
     console.log(event);
@@ -5566,6 +5571,11 @@ class MainContainer extends Component{
     if (this.state.view === "dietary" || this.state.view === "shopping" || this.state.view === "search"){
       return(
         <ListContainer search={this.onSearchSubmit} view={this.state.view} />
+      )
+    }
+    if (this.state.toggleProfile === true){
+      return(
+        <UserEditForm user={this.state.currentUser}/>
       )
     }
   }
@@ -5598,7 +5608,7 @@ class MainContainer extends Component{
 
     return(
       <div>
-      <NavBar handleViewChange={this.handleViewChange}/>
+      <NavBar handleProfileClick={this.handleProfileClick} user={this.state.currentUser} handleViewChange={this.handleViewChange}/>
       {this.currentView()}
       <div className="main-container">
 

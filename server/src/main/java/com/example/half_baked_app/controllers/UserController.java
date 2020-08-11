@@ -40,9 +40,9 @@ public class UserController {
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
-    @PatchMapping(value = "/users/{id}")
-    public ResponseEntity<User> updateUser(@RequestBody User user) {
-        userRepository.save(user);
+    @PutMapping(value = "/users/{id}")
+    public ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable Long id) {
+            userRepository.save(user);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 

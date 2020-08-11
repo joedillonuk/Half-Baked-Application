@@ -1,49 +1,45 @@
-import React, {Fragment} from 'react';
-import {Link} from "react-router-dom";
-import JohnSmith from '../images/JohnSmith.jpg';
+import React from 'react';
+import JohnSmith from '../../images/JohnSmith.jpg';
 
-const User = ({user}) => {
+const User = (props) => {
 
   return (
-    <div className="component">
+    <div>
 
     <img width="232" height="204" src={JohnSmith} alt="Profile Picture"></img>
-
-    <p class ClassName="name">
-    {user.firstName}
-    </p>
-
-    <p class ClassName="name">
-    {user.lastName}
+    <div>
+    <p className="name">
+    {props.user.firstName} {props.user.lastName}
     </p>
 
     <p className="age">
-    {user.age}
+    Age :{props.user.age}
     </p>
 
     <p className="gender">
-    {user.gender}
+    Gender: {props.user.gender}
     </p>
 
     <p className="weight">
-    {user.weight}
+    Weight: {props.user.weight}kg
     </p>
 
-    <p className="intolerances">
-    {user.intolerances}
+    {/*<p className="intolerances">
+    {props.user.intolerances}
     </p>
 
     <p className="dietary_needs">
-    {user.dietaryNeeds}
+    {props.user.dietaryNeeds}
     </p>
 
     <p className="shopping_list">
-    {user.shoppingList}
+    {props.user.shoppingList}
     </p>
 
     <p className="blacklist">
-    {user.blacklist}
-    </p>
+    {props.user.blacklist}
+    </p>*/}
+    </div>
     </div>
   )
 }

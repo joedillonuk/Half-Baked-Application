@@ -19,8 +19,9 @@ class ListContainer extends Component{
       intolerances: [],
       dietaryNeeds: [],
       shoppingList: [],
-      recipes:[]
+      recipes:[],
     }
+    this.expandDietary = this.expandDietary.bind(this);
   }
 
   // LOGIC STARTS HERE
@@ -56,32 +57,39 @@ class ListContainer extends Component{
     .catch(error => console.error)
   }
 
+  expandDietary(){
+    console.log("Click did work");
+    return           <DietaryList dietaryNeeds={this.state.dietaryNeeds}/>
+
+  }
+
   //RENDER STARTS HERE
   render(){
-    if (this.props.view[0] === "list"){
-      const {shoppingList} = this.state;
-      if(!shoppingList){
-        return <p>"Loading..."</p>
-      }
-
-
-      if(this.props.view[1] === "recipes"){
+    // if (this.props.view[0] === "list"){
+    //   const {shoppingList} = this.state;
+    //   if(!shoppingList){
+    //     return <p>"Loading..."</p>
+    //   }
+    //
+    //
+    //   if(this.props.view[1] === "recipes"){
+    //     return(
+    //       <Fragment>
+    //       <Blacklist blacklist={this.state.recipes}/>
+    //       <SavedRecipes recipes={this.state.recipes}/>
+    //       </Fragment>
+    //     )
+    //   }
+      if(this.props.view === "dietary"){
         return(
           <Fragment>
-          <Blacklist blacklist={this.state.recipes}/>
-          <SavedRecipes recipes={this.state.recipes}/>
-          </Fragment>
-        )
-      }
-      if(this.props.view[1] === "dietary"){
-        return(
-          <Fragment>
-          <DietaryList dietaryNeeds={this.state.dietaryNeeds}/>
+          <p onClick={this.expandDietary}>Dietary: Click to expand</p>
+
           <IntoleranceList intolerances={this.state.intolerances}/>
           </Fragment>
         )
       }
-      if(this.props.view[1] === "shopping"){
+      if(this.props.view === "shopping"){
         return(
           <Fragment>
           <ShoppingList shoppingList={this.state.shoppingList}/>
@@ -89,7 +97,7 @@ class ListContainer extends Component{
         )
       }
     }
-  }
+
 }
 
 

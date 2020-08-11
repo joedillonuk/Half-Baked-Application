@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: RGBA(245,245,245,0.6);
 }
 
 .App-logo {
@@ -37,22 +38,31 @@
   }
 }
 
-.main-container{
-  display: flex;
+
+
+/*
+____________NAV BAR CONTAINER____________
+*/
+
+.nav-bar {
+
+  background-color: RGBA(245,245,245,0.8);
+  padding-bottom: 10px;
 }
+
 
 /*
 ____________RECIPE CONTAINER____________
 */
 
 .recipe-container {
-  background-color: whitesmoke;
+  background-color: RGBA(245,245,245,0.8);
   border: 2px solid silver;
   border-radius: 16px;
 
   flex-direction: column;
-    padding: 10px 10px 10px 10px;
-    max-width: 1100px;
+    padding: 0px 10px 0px 0px;
+    max-width: 1200px;
 }
 
 .recipe-instructions{
@@ -86,6 +96,14 @@ ____________RECIPE CONTAINER____________
   max-width: 300px;
   max-height: 300px;
     margin: 10px 10px 10px 0;
+    transition: max-width 1s, max-height 1s, transform 1s;
+}
+
+.recipe-container img:hover {
+
+  max-width: 100%;
+  max-height: 100%;
+  margin: 10px 10px 10px 0;
 }
 
 #id{
@@ -103,7 +121,42 @@ ____________RECIPE CONTAINER____________
   max-width: 400px;
 }
 
+/*
+____________LIST OF RECIPES____________
+*/
 
+.list-of-recipes{
+  background-color: RGBA(245,245,245,0.8);
+  border: 2px solid #9EC3E6;
+  border-radius: 16px;
+  max-width: 200px;
+  text-align: left;
+
+}
+
+.list-of-recipes h3{
+  text-align: center;
+}
+
+.list-of-recipes ul{
+  list-style-type: none;
+}
+
+/*
+____________MAIN CONTAINER____________
+*/
+
+.main-container { border-collapse: collapse; }
+#list-of-recipes {
+
+  width: 20%;
+  padding-left: 25px;
+  vertical-align: top;
+}
+#recipes-container {
+  width: 80%;
+  background: #ccc;
+}
 
 
 /*

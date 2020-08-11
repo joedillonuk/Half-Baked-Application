@@ -11,7 +11,7 @@ class MainContainer extends Component{
     super(props);
 
     this.state={
-      view: ["search"]
+      view: "recipe"
 
     }
     this.handleViewChange = this.handleViewChange.bind(this);
@@ -19,33 +19,25 @@ class MainContainer extends Component{
   }
 
   handleViewChange(event){
-    let newState = this.state.view.concat(event)
-
-    console.log(event)
-    console.log(newState);
-    this.setState({view: newState});
+    console.log(event);
+    this.setState({view: event});
   }
 
   currentView(){
-  if (this.state.view[0] === "savedRecipes"){
-    return(
-      <RecipeContainer recipeID="716400" view={this.state.view}/>
 
-    )
-  }
 
-  if (this.state.view[0] === "list"){
-    return(
-      <ListContainer view={this.state.view}/>
-    )
-  }
+    if (this.state.view === "dietary" || this.state.view === "shopping"){
+      return(
+        <ListContainer view={this.state.view}/>
+      )
+    }
 
-  if (this.state.view[0] === "search"){
-    return(
-      <SearchContainer view={this.state.view}/>
-    )
-  }
-  return <h1>I do return something</h1>
+    if (this.state.view[0] === "search"){
+      return(
+        <SearchContainer view={this.state.view}/>
+      )
+    }
+    return null;
   }
 
   //Add in the RecipeContainer to the switch again
@@ -55,16 +47,24 @@ class MainContainer extends Component{
 
 
 
-      return(
-        <Fragment>
+    return(
+      <div>
+      <NavBar handleViewChange={this.handleViewChange}/>
+      {this.currentView()}
+        <div className="main-container">
 
-        <NavBar handleViewChange={this.handleViewChange}/>
-        <ListOfRecipes />
-        <RecipeContainer recipeID="716400" view={this.state.view}/>
+          <tr>
+            <td id="list-of-recipes">
+              <ListOfRecipes />
+            </td>
 
-        {this.currentView()}
-        </Fragment>
-      )
+          <td id="recipe-container">
+            <RecipeContainer recipeID="716400" view={this.state.view}/>
+            </td>
+          </tr>
+        </div>
+      </div>
+    )
 
   }
 }

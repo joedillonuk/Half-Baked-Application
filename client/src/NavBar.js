@@ -1,4 +1,7 @@
 import React from 'react';
+import HalfBakedLogo3 from './images/Half-BakedLogo3.png';
+
+
 
 const NavBar = (props) => {
 
@@ -6,8 +9,12 @@ const NavBar = (props) => {
     props.handleViewChange(event.target.value);
   }
 
+
+
   return(
-    <header>
+
+    <header className="nav-bar">
+
     <h2> THIS IS THE NAV BAR </h2>
 
     <button value="savedRecipes" onClick={handleNavClick}>My Recpies</button>

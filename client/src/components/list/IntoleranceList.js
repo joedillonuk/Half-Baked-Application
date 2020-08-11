@@ -21,14 +21,15 @@ const IntoleranceList = (props) => {
   return(
       <div className="intolerance-list">
       <div className="row">
-      <div className="column">
+
         <p>intolerances:</p>
-        </div>
+      </div>
+      <div className="row">
 
         {items}
-
+</div>
         </div>
-      </div>
+
     )
 }
 

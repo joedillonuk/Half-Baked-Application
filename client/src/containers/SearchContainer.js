@@ -7,12 +7,17 @@ import React, {Component, Fragment} from 'react';
 import SearchFilters from '../components/search/SearchFilters.js';
 import ActiveFiltersList from '../components/search/ActiveFiltersList.js';
 
+//tester
+import Request from '../helpers/request.js';
+
 class SearchContainer extends Component{
   constructor(props){
     super(props);
 
     this.state={
     }
+
+    this.postTest = this.postTest.bind(this)
   }
 
   // LOGIC STARTS HERE

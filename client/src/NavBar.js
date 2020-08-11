@@ -12,12 +12,9 @@ const NavBar = (props) => {
 
 
   return(
-<<<<<<< HEAD
-    <header className="nav-bar">
-=======
-    <header>
 
->>>>>>> develop
+    <header className="nav-bar">
+
     <h2> THIS IS THE NAV BAR </h2>
 
     <button value="savedRecipes" onClick={handleNavClick}>My Recpies</button>

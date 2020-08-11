@@ -17,7 +17,6 @@ class Request {
       body: JSON.stringify(payload)
     })
   }
-
   put(url, payload) {
     return fetch(url,  {
       method: "PUT",

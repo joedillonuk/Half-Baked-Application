@@ -2,6 +2,7 @@ package com.example.half_baked_app.controllers;
 
 import com.example.half_baked_app.models.User;
 import com.example.half_baked_app.repository.UserRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -33,6 +34,7 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
+    @CrossOrigin
     @DeleteMapping(value = "/users/{id}")
     public ResponseEntity<User> deleteUser(@PathVariable Long id) {
         User found = userRepository.getOne(id);
@@ -40,10 +42,16 @@ public class UserController {
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PutMapping(value = "/users/{id}")
-    public ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable Long id) {
-            userRepository.save(user);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+    public ResponseEntity<User> updatedUser(@PathVariable Long id, @RequestBody User user) {
+            User updatedUser = userRepository.getOne(id);
+            updatedUser.setWeight(user.getWeight());
+            updatedUser.setGender(user.getGender());
+            updatedUser.setAge(user.getAge());
+            userRepository.save(updatedUser);
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
+
 
 }

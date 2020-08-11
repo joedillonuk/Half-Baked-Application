@@ -37,12 +37,14 @@ class UserEditForm extends Component {
 
   handleProfileUpdate(event){
     event.preventDefault();
+    console.log("submit clicked");
     const request = new Request();
     let user = this.props.user;
     user.age = this.state.updatedAge;
+    console.log("updated age is: " + this.state.updatedAge);
     user.weight = this.state.updatedWeight;
     user.gender = this.state.updatedGender;
-    request.put("http://localhost:8080/api/users/0", user)
+    request.put(`http://localhost:8080/api/users/${user.id}`, user)
     .then(this.setState({editView: false}))
   }
 
@@ -123,7 +125,7 @@ class UserEditForm extends Component {
       <p className="blacklist">
       {props.user.blacklist}
       </p>*/}
-      <button type="submit" onSubmit={this.handleProfileUpdate}>Update</button>
+      <button type="submit" onClick={this.handleProfileUpdate}>Update</button>
       </div>
 
     )

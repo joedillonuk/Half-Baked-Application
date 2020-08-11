@@ -4,6 +4,7 @@ package com.example.half_baked_app.models;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -25,19 +26,19 @@ public class User {
     private String lastName;
 
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"user"})
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<DietaryNeed> dietaryNeeds;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"user"})
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Intolerance> intolerances;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"user"})
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<ShoppingListItem> shoppingList;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"user"})
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Recipe> savedRecipes;
 

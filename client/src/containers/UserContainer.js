@@ -29,17 +29,19 @@ class UserContainer extends Component {
   }
 
   render(){
-    return(
-      <Router>
-      <Fragment>
-      <Route exact path="/users/:id" render={(props) => {
-        const id = props.match.params.id;
-        const user = this.findUserById(id);
-        return <User user={user}/>
-      }}/>
-      </Fragment>
-      </Router>
-    )
+    if (!this.isLoading){
+      return(
+        <Router>
+        <Fragment>
+        <Route exact path="/users/:id" render={(props) => {
+          const id = props.match.params.id;
+          const user = this.findUserById(id);
+          return <User user={user}/>
+        }}/>
+        </Fragment>
+        </Router>
+      )
+    }
   }
 }
 

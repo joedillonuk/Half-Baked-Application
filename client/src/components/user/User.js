@@ -1,10 +1,13 @@
 import React, {Fragment} from 'react';
 import {Link} from "react-router-dom";
+import JohnSmith from '../images/JohnSmith.jpg';
 
 const User = ({user}) => {
 
   return (
     <div className="component">
+
+    <img width="232" height="204" src={JohnSmith} alt="Profile Picture"></img>
 
     <p class ClassName="name">
     {user.firstName}

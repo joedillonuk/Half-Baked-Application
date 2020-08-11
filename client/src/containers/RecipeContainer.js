@@ -28,7 +28,7 @@ class RecipeContainer extends Component{
   }
 
 render(){
-  let url = `https://api.spoonacular.com/recipes/${this.props.recipeID}/information?apiKey=5af7f33cbe434a64b6e95daa599e2837`
+  let url = `https://api.spoonacular.com/recipes/${this.props.recipeID}/information?apiKey=4e032f0a00ae4ac4a43167135bdca9b4`
   fetch(url)
   .then(res => res.json())
   .then(recipe => this.setState({selectedRecipe: recipe}))
@@ -38,7 +38,7 @@ render(){
   // LOGIC STARTS HERE
 
   componentDidMount(){
-    let url = `https://api.spoonacular.com/recipes/${this.props.recipeID}/information?apiKey=5af7f33cbe434a64b6e95daa599e2837`
+    let url = `https://api.spoonacular.com/recipes/${this.props.recipeID}/information?apiKey=4e032f0a00ae4ac4a43167135bdca9b4`
     fetch(url)
     .then(res => res.json())
     .then(recipe => this.setState({selectedRecipe: recipe}))

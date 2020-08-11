@@ -13,8 +13,13 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "recipeID")
     private Long recipeID;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "blacklist")
     private Boolean blacklist;
 
     @JsonIgnoreProperties({"recipes"})

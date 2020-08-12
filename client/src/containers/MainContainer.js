@@ -5,6 +5,7 @@ import RecipeContainer from './RecipeContainer.js';
 import ListContainer from './ListContainer.js';
 import ListOfRecipes from '../components/recipe/ListOfRecipes.js';
 import UserEditForm from '../components/user/UserEditForm.js'
+import Help from '../components/user/HelpComponent.js'
 
 class MainContainer extends Component{
   constructor(props){
@@ -5530,7 +5531,8 @@ class MainContainer extends Component{
       "originalId": null,
       "spoonacularSourceUrl": "https://spoonacular.com/flank-steak-with-mushroom-sauce-631750"
     },
-      toggleProfile: false
+      toggleProfile: false,
+      toggleHelp: false,
 
       }
       this.handleViewChange = this.handleViewChange.bind(this);
@@ -5538,11 +5540,16 @@ class MainContainer extends Component{
       this.onSearchSubmit = this.onSearchSubmit.bind(this);
       this.onReceiveRecipeClick = this.onReceiveRecipeClick.bind(this);
       this.handleProfileClick = this.handleProfileClick.bind(this);
+      this.handleHelpClick = this.handleHelpClick.bind(this);
     }
 
 
   handleProfileClick(){
     this.setState({toggleProfile: !this.state.toggleProfile})
+  }
+
+  handleHelpClick(){
+    this.setState({toggleHelp: !this.state.toggleHelp})
   }
 
   handleViewChange(event){
@@ -5578,6 +5585,11 @@ class MainContainer extends Component{
         <UserEditForm user={this.state.currentUser}/>
       )
     }
+    if (this.state.toggleHelp === true){
+      return(
+        <Help help={this.state.help}/>
+      )
+    }
   }
 
   componentDidMount(){
@@ -5608,7 +5620,7 @@ class MainContainer extends Component{
 
     return(
       <div>
-      <NavBar handleProfileClick={this.handleProfileClick} user={this.state.currentUser} handleViewChange={this.handleViewChange}/>
+      <NavBar handleHelpClick={this.handleHelpClick} help={this.help} handleProfileClick={this.handleProfileClick} user={this.state.currentUser} handleViewChange={this.handleViewChange}/>
       {this.currentView()}
       <div className="main-container">
 

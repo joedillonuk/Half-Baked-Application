@@ -22,6 +22,7 @@ return(
         <button value="shopping" onClick={handleNavClick}>My Shopping List</button>
         <button value="dietary" onClick={handleNavClick}>My Dietary Needs and Intolerances</button>
         <button value="search" onClick={handleNavClick}>Search</button>
+        <button value="search" onClick={handleNavClick}>Help</button>
 
     </header>
   )

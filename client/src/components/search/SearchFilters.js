@@ -91,7 +91,7 @@ class SearchFilers extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className="search-filter">
       <form>
       <h3>Filter by Ingredient: </h3>
 

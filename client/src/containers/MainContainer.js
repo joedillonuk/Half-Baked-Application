@@ -5,7 +5,7 @@ import RecipeContainer from './RecipeContainer.js';
 import ListContainer from './ListContainer.js';
 import ListOfRecipes from '../components/recipe/ListOfRecipes.js';
 import UserEditForm from '../components/user/UserEditForm.js'
-// import Help from '../components/user/HelpComponent.js'
+import Help from '../components/help/HelpComponent.js'
 
 class MainContainer extends Component{
   constructor(props){
@@ -5596,11 +5596,11 @@ class MainContainer extends Component{
         <UserEditForm user={this.state.currentUser}/>
       )
     }
-    {/*if (this.state.toggleHelp === true){
+    if (this.state.toggleHelp === true){
       return(
         <Help help={this.state.help}/>
       )
-    }*/}
+    }
   }
 
   componentDidMount(){
@@ -5631,7 +5631,7 @@ class MainContainer extends Component{
 
     return(
       <div>
-      <NavBar handleProfileClick={this.handleProfileClick} user={this.state.currentUser} handleViewChange={this.handleViewChange} search={this.onSearchSubmit}/>
+      <NavBar handleHelpClick={this.handleHelpClick} handleProfileClick={this.handleProfileClick} user={this.state.currentUser} handleViewChange={this.handleViewChange} search={this.onSearchSubmit}/>
       {this.currentView()}
       <div className="main-container">
 

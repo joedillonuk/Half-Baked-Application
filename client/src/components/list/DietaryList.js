@@ -22,7 +22,7 @@ return(
     <div className="intolerance-list">
     <div className="row">
 
-      <p>Dietary needs:</p>
+      <h4>Dietary needs:</h4>
       {items}
       </div>
       </div>

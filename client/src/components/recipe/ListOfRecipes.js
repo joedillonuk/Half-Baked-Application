@@ -10,7 +10,7 @@ const handleRecipeClick = (event) => {
   const items = props.recipes.map((item, index) => {
     // if (props.intolerances.user_id == 0){
       return <div key={index} onClick={() => handleRecipeClick(item)} value={item}  className="list-of-recipes-item">
-                <p >{item.title} {item.id}</p>
+                <p >{item.title}</p>
 
             </div>
     // }

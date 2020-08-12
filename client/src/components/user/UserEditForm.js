@@ -105,11 +105,11 @@ class UserEditForm extends Component {
       {this.props.user.firstName} {this.props.user.lastName}
       </p>
 
-      <input type="number" placeholder={this.props.user.age} onChange={this.updatedAge}></input>
+      <input type="number" placeholder={this.props.user.age} onChange={this.updatedAge} required></input>
 
-      <input type="text" placeholder={this.props.user.gender} onChange={this.updatedGender}></input>
+      <input type="text" placeholder={this.props.user.gender} onChange={this.updatedGender} required></input>
 
-      <input type="number" placeholder={this.props.user.weight} onChange={this.updatedWeight}></input>
+      <input type="number" placeholder={this.props.user.weight} onChange={this.updatedWeight} required></input>
 
       {/*<p className="intolerances">
       {props.user.intolerances}

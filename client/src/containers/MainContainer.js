@@ -5577,7 +5577,7 @@ class MainContainer extends Component{
     const url = searchUrl + this.state.apiKey;
     fetch(url)
     .then(res => res.json())
-    .then(recipes => this.setState({recipeList: recipes.results}))
+    .then(recipes => this.setState({recipeList: recipes.results, view: "recipe"}))
     .catch(error => console.error)
   }
 

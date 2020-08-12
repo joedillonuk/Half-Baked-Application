@@ -75,7 +75,8 @@ ____________NAV BAR CONTAINER____________
 */
 
 .nav-bar {
-
+  width: 100%;
+  padding-left: 25px;
   background-color: RGBA(245,245,245,0.8);
   padding-bottom: 10px;
 }
@@ -102,6 +103,14 @@ ____________NAV BAR CONTAINER____________
  border-color: rgba(255,255,255,1);
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> f62a69d114e1068ff92f36e4bc95086a5178e9be
 /*
 ____________RECIPE CONTAINER____________
 */

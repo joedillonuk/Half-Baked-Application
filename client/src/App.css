@@ -102,7 +102,6 @@ ____________NAV BAR CONTAINER____________
  border-color: rgba(255,255,255,1);
 }
 
-
 /*
 ____________RECIPE CONTAINER____________
 */
@@ -368,8 +367,46 @@ ____________USER PROFILE____________
 }
 
 /*
+____________HELP COMPONENT____________
+*/
+
+.help-component{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+  background-color: RGBA(245,245,245,0.8);
+  border: 2px solid #9EC3E6;
+  border-radius: 16px;
+  max-width: 800px;
+  max-height: auto;
+  text-align: left;
+
+}
+
+.help-component h3{
+  text-align: center;
+}
+
+.help-component ul{
+  list-style-type: none;
+}
+
+.help-component li{
+  list-style-type: none;
+}
+
+.help-component p{
+  list-style-type: none;
+  margin-left: 25px;
+}
+
+
+/*
 ____________SEARCH FILTERS____________
 */
+
+
 
 .search-filter fsSubmitButton{
   font-weight: bold;

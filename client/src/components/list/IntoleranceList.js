@@ -22,7 +22,7 @@ const IntoleranceList = (props) => {
       <div className="intolerance-list">
       <div className="row">
 
-        <p>intolerances:</p>
+        <h4>Intolerances:</h4>
         {items}
         </div>
         </div>

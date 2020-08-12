@@ -54,7 +54,7 @@ class UserEditForm extends Component {
 
       return (
 
-        <div>
+        <div class="user-profile">
 
         <img width="232" height="204" src={JohnSmith} alt="Profile Picture"></img>
         <div>
@@ -99,7 +99,8 @@ class UserEditForm extends Component {
     }
     return(
 
-      <div>
+      <div class="user-profile">
+      <img width="232" height="204" src={JohnSmith} alt="Profile Picture"></img>
       <p className="name">
       {this.props.user.firstName} {this.props.user.lastName}
       </p>

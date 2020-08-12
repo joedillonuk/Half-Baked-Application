@@ -5620,7 +5620,7 @@ class MainContainer extends Component{
 
     return(
       <div>
-      <NavBar handleProfileClick={this.handleProfileClick} user={this.state.currentUser} handleViewChange={this.handleViewChange}/>
+      <NavBar handleProfileClick={this.handleProfileClick} user={this.state.currentUser} handleViewChange={this.handleViewChange} search={this.onSearchSubmit}/>
       {this.currentView()}
       <div className="main-container">
 

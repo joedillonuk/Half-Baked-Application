@@ -5614,11 +5614,11 @@ class MainContainer extends Component{
 
       <tr>
       <td id="list-of-recipes">
-      <ListOfRecipes recipes={this.state.recipeList} onReceiveRecipeClick={this.onReceiveRecipeClick}/>
+      <ListOfRecipes user={this.state.currentUser} recipes={this.state.recipeList} onReceiveRecipeClick={this.onReceiveRecipeClick}/>
       </td>
 
       <td id="recipe-container">
-      <RecipeContainer selectedRecipe={this.state.selectedRecipe} view={this.state.view}/>
+      <RecipeContainer user={this.state.currentUser} selectedRecipe={this.state.selectedRecipe} view={this.state.view}/>
       </td>
       </tr>
       </div>

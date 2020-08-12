@@ -15,6 +15,9 @@ public class ShoppingListItem {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "imgUrl")
+    private String imgUrl;
+
     @JsonIgnoreProperties({"shopping_list"})
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -22,8 +25,9 @@ public class ShoppingListItem {
 
     //CONSTRUCTORS
 
-    public ShoppingListItem(String name, User user){
+    public ShoppingListItem(String name, String imgUrl, User user){
         this.name = name;
+        this.imgUrl = imgUrl;
         this.user = user;
     }
 
@@ -52,5 +56,13 @@ public class ShoppingListItem {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }

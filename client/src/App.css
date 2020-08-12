@@ -55,11 +55,11 @@ ____________Intolerance List CONTAINER____________
   background-color: RGBA(245,245,245,0.8);
   border: 2px solid #ccc;
   border-radius: 10px;
-    flex: 0 0 100px; /*  No stretching: */
-    justify-content: center;
-    margin-bottom: 5px;
-    margin-left: 2px;
-    margin-right: 2px;
+  flex: 0 0 100px; /*  No stretching: */
+  justify-content: center;
+  margin-bottom: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 .intolerance-list-item:hover{
@@ -80,6 +80,28 @@ ____________NAV BAR CONTAINER____________
   padding-bottom: 10px;
 }
 
+.nav-bar button {
+  font-weight: bold;
+  background-color: #9a4ef1;
+  display:inline-block;
+  padding:0.3em 1.2em;
+  margin:0 0.1em 0.1em 0;
+  border:0.16em solid rgba(255,255,255,0);
+  border-radius:2em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  text-align:center;
+  transition: all 0.2s;
+}
+
+.nav-bar button:hover{
+ border-color: rgba(255,255,255,1);
+}
+
 
 /*
 ____________RECIPE CONTAINER____________
@@ -91,8 +113,8 @@ ____________RECIPE CONTAINER____________
   border-radius: 16px;
 
   flex-direction: column;
-    padding: 0px 10px 0px 0px;
-    max-width: 1200px;
+  padding: 0px 10px 0px 0px;
+  max-width: 1200px;
 }
 
 .recipe-instructions{
@@ -125,8 +147,8 @@ ____________RECIPE CONTAINER____________
 .recipe-container img {
   max-width: 300px;
   max-height: 300px;
-    margin: 10px 10px 10px 0;
-    transition: max-width 1s, max-height 1s, transform 1s;
+  margin: 10px 10px 10px 0;
+  transition: max-width 1s, max-height 1s, transform 1s;
 }
 
 .recipe-container img:hover {
@@ -214,35 +236,35 @@ ____________INGREDIENT LIST CONTAINER____________
 .ingredient-list-container {
   max-height: 500px;
   overflow: auto;
-    max-width: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
- }
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
- .ingredient-list-header h2{
-   padding-left: 50px;
-   float:left;
- }
- .ingredient-list-header h3{
-   padding-right: 50px;
-   float:right;
- }
+.ingredient-list-header h2{
+  padding-left: 50px;
+  float:left;
+}
+.ingredient-list-header h3{
+  padding-right: 50px;
+  float:right;
+}
 
 .ingredient-list-item {
   background-color: white;
   border: 2px solid #ccc;
   border-radius: 16px;
-    flex: 0 0 150px; /*  No stretching: */
-    justify-content: center;
-    margin-bottom: 15px;
-    margin-left: 2px;
-    margin-right: 2px;
-  }
+  flex: 0 0 150px; /*  No stretching: */
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
 
-  .ingredient-list-item h4{
-    line-height: 1em;
-    height: 1.5em;
+.ingredient-list-item h4{
+  line-height: 1em;
+  height: 1.5em;
 }
 
 .ingredient-list-item p{
@@ -250,20 +272,43 @@ ____________INGREDIENT LIST CONTAINER____________
   height: 1em;
 }
 
-  .ingredient-list-item-image-container{
-    display: grid;
-    place-items: center;
-    width: 110px;
-    height: 110px;
-    margin: auto;
-    /* border: 3px solid #73AD21; */
-  }
+.ingredient-list-item-image-container{
+  display: grid;
+  place-items: center;
+  width: 110px;
+  height: 110px;
+  margin: auto;
+  /* border: 3px solid #73AD21; */
+}
 
 .ingredient-list-item-image-container img{
   max-width: 120px;
   max-height: 120px;
   margin: auto;
 }
+.ingredient-list-container button {
+  font-weight: bold;
+  background-color: #9a4ef1;
+  display:inline-block;
+  padding:0.3em 1.2em;
+  margin:0 0.1em 0.1em 0;
+  border:0.16em solid rgba(255,255,255,0);
+  border-radius:2em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  text-align:center;
+  transition: all 0.2s;
+}
+
+.ingredient-list-container button:hover{
+ border-color: rgba(255,255,255,1);
+}
+
+
 
 /*
 ____________USER PROFILE____________
@@ -299,6 +344,56 @@ ____________USER PROFILE____________
   list-style-type: none;
   margin-left: 25px;
 }
+
+.user-profile button {
+  font-weight: bold;
+  background-color: #9a4ef1;
+  display:inline-block;
+  padding:0.3em 1.2em;
+  margin:0 0.1em 0.1em 0;
+  border:0.16em solid rgba(255,255,255,0);
+  border-radius:2em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  text-align:center;
+  transition: all 0.2s;
+}
+
+.user-profile button:hover{
+ border-color: rgba(255,255,255,1);
+}
+
+/*
+____________SEARCH FILTERS____________
+*/
+
+.search-filter fsSubmitButton{
+  font-weight: bold;
+  background-color: #9a4ef1;
+  display:inline-block;
+  padding:0.3em 1.2em;
+  margin:0 0.1em 0.1em 0;
+  border:0.16em solid rgba(255,255,255,0);
+  border-radius:2em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  text-align:center;
+  transition: all 0.2s;
+}
+
+.search-filter fsSubmitButton:hover{
+ border-color: rgba(255,255,255,1);
+}
+
+
 
 /*
 ____________TBC CONTAINER____________

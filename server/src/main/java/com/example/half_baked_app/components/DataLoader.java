@@ -45,13 +45,13 @@ public class DataLoader implements ApplicationRunner {
         Intolerance intolerance2 = new Intolerance("Shellfish", user1);
         intoleranceRepository.save(intolerance2);
 
-        ShoppingListItem shoppingListItem1 = new ShoppingListItem("Bread", user1);
+        ShoppingListItem shoppingListItem1 = new ShoppingListItem("asparagus", "asparagus.png", user1);
         shoppingListItemRepository.save(shoppingListItem1);
 
-        ShoppingListItem shoppingListItem2 = new ShoppingListItem("Avocado", user1);
+        ShoppingListItem shoppingListItem2 = new ShoppingListItem("olive oil", "olive-oil.jpg", user1);
         shoppingListItemRepository.save(shoppingListItem2);
 
-        ShoppingListItem shoppingListItem3 = new ShoppingListItem("Vegan Cheese", user1);
+        ShoppingListItem shoppingListItem3 = new ShoppingListItem("bacon", "raw-bacon.png", user1);
         shoppingListItemRepository.save(shoppingListItem3);
 
 

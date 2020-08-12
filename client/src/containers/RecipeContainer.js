@@ -34,14 +34,14 @@ class RecipeContainer extends Component{
         <div className="column">
         <div className="recipe-container-image-and-directions">
         <img id="floated" src={this.props.selectedRecipe.image}/>
-        <RecipeInstructions selectedRecipe={this.props.selectedRecipe} />
+        <RecipeInstructions user={this.props.user} selectedRecipe={this.props.selectedRecipe} />
 
         <p>Add to favourites</p>
         <p>Blacklist Recipe</p>
         </div>
         </div>
         <div className="column">
-        <IngredientList ingredients={this.props.selectedRecipe.extendedIngredients} />
+        <IngredientList user={this.props.user} ingredients={this.props.selectedRecipe.extendedIngredients} />
         </div>
         </div>
     </div>

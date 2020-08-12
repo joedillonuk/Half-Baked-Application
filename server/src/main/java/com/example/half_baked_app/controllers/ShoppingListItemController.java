@@ -1,6 +1,7 @@
 package com.example.half_baked_app.controllers;
 
 import com.example.half_baked_app.models.ShoppingListItem;
+import com.example.half_baked_app.models.User;
 import com.example.half_baked_app.repository.ShoppingListItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class ShoppingListItemController {
     @Autowired
@@ -38,9 +40,21 @@ public class ShoppingListItemController {
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PatchMapping(value = "/shopping_list/{id}")
     public ResponseEntity<ShoppingListItem> updateShoppingListItem(@RequestBody ShoppingListItem shoppingListItem) {
         shoppingListItemRepository.save(shoppingListItem);
         return new ResponseEntity<>(shoppingListItem, HttpStatus.OK);
+    }
+
+    @CrossOrigin
+    @PutMapping(value = "/shopping_list_item/{id}")
+    public ResponseEntity<ShoppingListItem> updatedShoppingListItem(@PathVariable Long id, @RequestBody ShoppingListItem shoppingListItem) {
+        ShoppingListItem updatedShoppingListItem = shoppingListItemRepository.getOne(id);
+        updatedShoppingListItem.setName(shoppingListItem.getName());
+        updatedShoppingListItem.setImgUrl(shoppingListItem.getImgUrl());
+        updatedShoppingListItem.setUser(shoppingListItem.getUser());
+        shoppingListItemRepository.save(updatedShoppingListItem);
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
 }

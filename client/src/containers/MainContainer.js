@@ -5533,6 +5533,7 @@ class MainContainer extends Component{
     },
       toggleProfile: false,
       toggleHelp: false,
+      testRecipe: null
 
       }
       this.handleViewChange = this.handleViewChange.bind(this);
@@ -5558,7 +5559,17 @@ class MainContainer extends Component{
   }
 
   onReceiveRecipeClick(clickedRecipe){
-    this.setState({selectedRecipe: clickedRecipe})
+
+      console.log(clickedRecipe.id);
+      let recipeUrl = `https://api.spoonacular.com/recipes/${clickedRecipe.id}/information?${this.state.apiKey}`
+      fetch(recipeUrl)
+      .then(res => res.json())
+      .then(recipe => this.setState({selectedRecipe: recipe}))
+      .catch(error => console.error)
+
+
+    // Write logic to use below if full recipe data exists
+    //  this.setState({selectedRecipe: clickedRecipe})
   }
 
   onSearchSubmit(searchUrl){

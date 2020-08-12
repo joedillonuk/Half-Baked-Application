@@ -29,7 +29,7 @@ class RecipeContainer extends Component{
         {/* Removing ListOfRecipes from RecipeContainer
             May move to MainContainer
           <ListOfRecipes/> */}
-          <h2 id="header">{this.props.selectedRecipe.title} {this.props.selectedRecipe.id}</h2>
+          <h2 id="header">{this.props.selectedRecipe.title}</h2>
         <div className="row">
         <div className="column">
         <div className="recipe-container-image-and-directions">

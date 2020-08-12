@@ -75,7 +75,8 @@ ____________NAV BAR CONTAINER____________
 */
 
 .nav-bar {
-
+  width: 100%;
+  padding-left: 25px;
   background-color: RGBA(245,245,245,0.8);
   padding-bottom: 10px;
 }
@@ -101,6 +102,10 @@ ____________NAV BAR CONTAINER____________
 .nav-bar button:hover{
  border-color: rgba(255,255,255,1);
 }
+
+
+
+
 
 
 /*

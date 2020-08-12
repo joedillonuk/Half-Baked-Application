@@ -22,19 +22,25 @@ return(
   <header className="nav-bar">
     <img width="260.8" height="44.6" src={HalfBakedLogo3} alt="Logo"></img>
       <br/>
-        <button value="profile" onClick={handleProfileClick}>Profile</button>
+      <div className="row">
+      <div id="nav-left">
+        <input type="text" id="quickSearch" placeholder="Recipe Name"/>
+        <button onClick={onSearchSubmit}>Quick Search</button>
+        <button value="search" onClick={handleNavClick}>Detailed Search</button>
+      </div>
+
+      <div id="nav-center">
         <button value="savedRecipes" onClick={handleNavClick}>My Recipes</button>
         <button value="shopping" onClick={handleNavClick}>My Shopping List</button>
         <button value="dietary" onClick={handleNavClick}>My Dietary Needs and Intolerances</button>
-<<<<<<< HEAD
-        <button value="search" onClick={handleNavClick}>Detailed Search</button>
+      </div>
+
+      <div id="nav-right">
+        <button value="profile" onClick={handleProfileClick}>Profile</button>
         <button value="search" onClick={handleNavClick}>Help</button>
-        <input type="text" id="quickSearch" placeholder="Recipe Name"/>
-        <button onClick={onSearchSubmit}>Quick Search</button>
-=======
-        <button value="search" onClick={handleNavClick}>Search</button>
         {/*<button value="search" onClick={handleNavClick}>Help</button>*/}
->>>>>>> 8225ed186a46120a751d568e71730ed65967adcb
+      </div>
+      </div>
 
     </header>
   )
